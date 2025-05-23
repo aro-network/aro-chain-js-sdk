@@ -1,0 +1,46 @@
+// Auto-generated via `yarn polkadot-types-from-defs`, do not edit
+/* eslint-disable */
+
+import type { HostAddressType } from '@aro-network/types/interfaces/manager';
+import type { RegionCodeType } from '@aro-network/types/interfaces/region';
+import type { Enum, Struct, U8aFixed, Vec, u16 } from '@polkadot/types-codec';
+import type { AccountId, BlockNumber } from '@polkadot/types/interfaces/runtime';
+
+/** @name Checker */
+export interface Checker extends Struct {
+  readonly checker_account: AccountId;
+  readonly checker_pubkey: U8aFixed;
+  readonly region_code: RegionCodeType;
+  readonly host_address: HostAddressType;
+  readonly http_port: u16;
+  readonly perf_ports: PortsListType;
+  readonly register_status: CheckerRegisterStatus;
+  readonly creator: AccountId;
+  readonly create_at: BlockNumber;
+  readonly updator: AccountId;
+  readonly update_at: BlockNumber;
+}
+
+/** @name CheckerRegisterStatus */
+export interface CheckerRegisterStatus extends Enum {
+  readonly isRsPendingActivate: boolean;
+  readonly isRsActivate: boolean;
+  readonly type: 'RsPendingActivate' | 'RsActivate';
+}
+
+/** @name PortsListType */
+export interface PortsListType extends Vec {}
+
+/** @name Scheduler */
+export interface Scheduler extends Struct {
+  readonly scheduler_account: AccountId;
+  readonly scheduler_pubkey: U8aFixed;
+  readonly host_address: HostAddressType;
+  readonly http_port: u16;
+  readonly creator: AccountId;
+  readonly create_at: BlockNumber;
+  readonly updator: AccountId;
+  readonly update_at: BlockNumber;
+}
+
+export type PHANTOM_CHECKER = 'checker';
