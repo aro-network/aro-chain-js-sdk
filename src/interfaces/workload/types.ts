@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 import type { CheatStatus } from '@aro-network/types/interfaces/edgenode';
-import type { Enum, Option, Struct, Vec, i64, u64 } from '@polkadot/types-codec';
+import type { Bytes, Enum, Option, Struct, i64, u64 } from '@polkadot/types-codec';
 import type { AccountId, BlockNumber } from '@polkadot/types/interfaces/runtime';
 
 /** @name CheatStatusChangeRequest */
@@ -20,7 +20,7 @@ export interface CheatStatusProcessData extends Struct {
   readonly start_at: BlockNumber;
   readonly update_at: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<PageKeyType>;
+  readonly page_next_key: Option<Bytes>;
 }
 
 /** @name CheatStatusResult */
@@ -32,18 +32,18 @@ export interface CheatStatusResult extends Struct {
 /** @name EpochInfo */
 export interface EpochInfo extends Struct {
   readonly number: u64;
-  readonly start_time: Moment;
+  readonly start_time: u64;
   readonly start_block: BlockNumber;
-  readonly end_time: Moment;
+  readonly end_time: u64;
   readonly end_block: Option<BlockNumber>;
 }
 
 /** @name EraInfo */
 export interface EraInfo extends Struct {
   readonly number: u64;
-  readonly start_time: Moment;
+  readonly start_time: u64;
   readonly start_block: BlockNumber;
-  readonly end_time: Moment;
+  readonly end_time: u64;
   readonly end_block: Option<BlockNumber>;
 }
 
@@ -77,17 +77,11 @@ export interface ManagerWRWorkload extends Struct {
   readonly update_at: BlockNumber;
 }
 
-/** @name Moment */
-export interface Moment extends u64 {}
-
 /** @name NodeWorkload */
 export interface NodeWorkload extends Struct {
   readonly score: u64;
   readonly create_at: BlockNumber;
 }
-
-/** @name PageKeyType */
-export interface PageKeyType extends Vec {}
 
 /** @name ParamKey */
 export interface ParamKey extends Enum {
@@ -130,7 +124,7 @@ export interface ReputationPointProcessData extends Struct {
   readonly start_at: BlockNumber;
   readonly update_at: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<PageKeyType>;
+  readonly page_next_key: Option<Bytes>;
 }
 
 /** @name Workreport */
@@ -148,7 +142,7 @@ export interface WorkreportProcessData extends Struct {
   readonly start_at: BlockNumber;
   readonly update_at: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<PageKeyType>;
+  readonly page_next_key: Option<Bytes>;
 }
 
 export type PHANTOM_WORKLOAD = 'workload';

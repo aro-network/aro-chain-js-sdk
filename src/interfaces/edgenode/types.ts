@@ -1,9 +1,7 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { RegionCodeType } from '@aro-network/types/interfaces/region';
-import type { UserIdType } from '@aro-network/types/interfaces/user';
-import type { Enum, Struct, Vec, i64, u32 } from '@polkadot/types-codec';
+import type { Bytes, Enum, Struct, i64, u32 } from '@polkadot/types-codec';
 import type { AccountId, BlockNumber } from '@polkadot/types/interfaces/runtime';
 
 /** @name CheatStatus */
@@ -14,16 +12,13 @@ export interface CheatStatus extends Enum {
   readonly type: 'CsNormal' | 'CsSuspicious' | 'CsBlacklist';
 }
 
-/** @name DeviceType */
-export interface DeviceType extends Vec {}
-
 /** @name Node */
 export interface Node extends Struct {
-  readonly node_id: NodeIdType;
-  readonly node_pubkey: NodePubkeyType;
-  readonly user_id: UserIdType;
-  readonly device_type: DeviceType;
-  readonly region_code: RegionCodeType;
+  readonly node_id: Bytes;
+  readonly node_pubkey: Bytes;
+  readonly user_id: Bytes;
+  readonly device_type: Bytes;
+  readonly region_code: Bytes;
   readonly traffic_type: u32;
   readonly register_status: NodeRegisterStatus;
   readonly cheat_status: CheatStatus;
@@ -33,12 +28,6 @@ export interface Node extends Struct {
   readonly updator: AccountId;
   readonly update_at: BlockNumber;
 }
-
-/** @name NodeIdType */
-export interface NodeIdType extends Vec {}
-
-/** @name NodePubkeyType */
-export interface NodePubkeyType extends Vec {}
 
 /** @name NodeRegisterStatus */
 export interface NodeRegisterStatus extends Enum {

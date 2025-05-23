@@ -2,9 +2,6 @@
 
 export default {
     types: {
-      NodeIdType: 'BoundedVec<u8>',
-      NodePubkeyType: 'BoundedVec<u8>',
-      DeviceType: 'BoundedVec<u8>',
       NodeRegisterStatus: {
         _enum: ['RsPendingBind', 'RsPendingActivate', 'RsActivate']
       },
@@ -12,11 +9,11 @@ export default {
         _enum: ['CsNormal', 'CsSuspicious', 'CsBlacklist']
       },
       Node: {
-        node_id: 'NodeIdType',
-        node_pubkey: 'NodePubkeyType',
-        user_id: 'UserIdType',
-        device_type: 'DeviceType',
-        region_code: 'RegionCodeType',
+        node_id: 'Vec<u8>',
+        node_pubkey: 'Vec<u8>',
+        user_id: 'Vec<u8>',
+        device_type: 'Vec<u8>',
+        region_code: 'Vec<u8>',
         traffic_type: 'u32',
         register_status: 'NodeRegisterStatus',
         cheat_status: 'CheatStatus',

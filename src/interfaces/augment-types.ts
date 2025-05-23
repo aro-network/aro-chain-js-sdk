@@ -5,12 +5,12 @@
 // this is required to allow for ambient/previous definitions
 import '@polkadot/types/types/registry';
 
-import type { Checker, CheckerRegisterStatus, PortsListType, Scheduler } from '@aro-network/types/interfaces/checker';
-import type { CheatStatus, DeviceType, Node, NodeIdType, NodePubkeyType, NodeRegisterStatus } from '@aro-network/types/interfaces/edgenode';
-import type { HostAddressType, Manager, ManagerRegisterStatus, ManagerWorkingStatus, Operator, OperatorDescType, OperatorNameType, OperatorUrlType } from '@aro-network/types/interfaces/manager';
-import type { Region, RegionCodeType, RegionDescType, RegionNameType } from '@aro-network/types/interfaces/region';
-import type { User, UserIdType } from '@aro-network/types/interfaces/user';
-import type { CheatStatusChangeRequest, CheatStatusProcessData, CheatStatusResult, EpochInfo, EraInfo, ManagerCSWorkload, ManagerRPWorkload, ManagerWRWorkload, NodeWorkload, PageKeyType, ParamKey, ProcessStatus, ReputationDeltaPoint, ReputationPointChangeRequest, ReputationPointProcessData, Workreport, WorkreportProcessData } from '@aro-network/types/interfaces/workload';
+import type { Checker, CheckerRegisterStatus, Scheduler } from '@aro-network/types/interfaces/checker';
+import type { CheatStatus, Node, NodeRegisterStatus } from '@aro-network/types/interfaces/edgenode';
+import type { Manager, ManagerRegisterStatus, ManagerWorkingStatus, Operator } from '@aro-network/types/interfaces/manager';
+import type { Region } from '@aro-network/types/interfaces/region';
+import type { User } from '@aro-network/types/interfaces/user';
+import type { CheatStatusChangeRequest, CheatStatusProcessData, CheatStatusResult, EpochInfo, EraInfo, ManagerCSWorkload, ManagerRPWorkload, ManagerWRWorkload, NodeWorkload, ParamKey, ProcessStatus, ReputationDeltaPoint, ReputationPointChangeRequest, ReputationPointProcessData, Workreport, WorkreportProcessData } from '@aro-network/types/interfaces/workload';
 import type { Data, StorageKey } from '@polkadot/types';
 import type { BitVec, Bool, Bytes, F32, F64, I128, I16, I256, I32, I64, I8, ISize, Json, Null, OptionBool, Raw, Text, Type, U128, U16, U256, U32, U64, U8, USize, bool, f32, f64, i128, i16, i256, i32, i64, i8, isize, u128, u16, u256, u32, u64, u8, usize } from '@polkadot/types-codec';
 import type { TAssetConversion } from '@polkadot/types/interfaces/assetConversion';
@@ -377,7 +377,6 @@ declare module '@polkadot/types/types/registry' {
     DepositBalance: DepositBalance;
     DepositBalanceOf: DepositBalanceOf;
     DestroyWitness: DestroyWitness;
-    DeviceType: DeviceType;
     Digest: Digest;
     DigestItem: DigestItem;
     DigestOf: DigestOf;
@@ -603,7 +602,6 @@ declare module '@polkadot/types/types/registry' {
     Heartbeat: Heartbeat;
     HeartbeatTo244: HeartbeatTo244;
     HintV5: HintV5;
-    HostAddressType: HostAddressType;
     HostConfiguration: HostConfiguration;
     HostFnWeights: HostFnWeights;
     HostFnWeightsTo264: HostFnWeightsTo264;
@@ -820,8 +818,6 @@ declare module '@polkadot/types/types/registry' {
     NftItemId: NftItemId;
     Node: Node;
     NodeFeatures: NodeFeatures;
-    NodeIdType: NodeIdType;
-    NodePubkeyType: NodePubkeyType;
     NodeRegisterStatus: NodeRegisterStatus;
     NodeRole: NodeRole;
     NodeWorkload: NodeWorkload;
@@ -852,9 +848,6 @@ declare module '@polkadot/types/types/registry' {
     OpenTipTo225: OpenTipTo225;
     OperatingMode: OperatingMode;
     Operator: Operator;
-    OperatorDescType: OperatorDescType;
-    OperatorNameType: OperatorNameType;
-    OperatorUrlType: OperatorUrlType;
     OptionBool: OptionBool;
     Origin: Origin;
     OriginCaller: OriginCaller;
@@ -876,7 +869,6 @@ declare module '@polkadot/types/types/registry' {
     Owner: Owner;
     PageCounter: PageCounter;
     PageIndexData: PageIndexData;
-    PageKeyType: PageKeyType;
     PalletAssociatedTypeMetadataV16: PalletAssociatedTypeMetadataV16;
     PalletCallMetadataLatest: PalletCallMetadataLatest;
     PalletCallMetadataV14: PalletCallMetadataV14;
@@ -950,7 +942,6 @@ declare module '@polkadot/types/types/registry' {
     Points: Points;
     PortableType: PortableType;
     PortableTypeV14: PortableTypeV14;
-    PortsListType: PortsListType;
     PostDispatchInfo: PostDispatchInfo;
     Precommits: Precommits;
     PrefabWasmModule: PrefabWasmModule;
@@ -1008,9 +999,6 @@ declare module '@polkadot/types/types/registry' {
     ReferendumInfoTo239: ReferendumInfoTo239;
     ReferendumStatus: ReferendumStatus;
     Region: Region;
-    RegionCodeType: RegionCodeType;
-    RegionDescType: RegionDescType;
-    RegionNameType: RegionNameType;
     RegisteredParachainInfo: RegisteredParachainInfo;
     RegistrarIndex: RegistrarIndex;
     RegistrarInfo: RegistrarInfo;
@@ -1298,7 +1286,6 @@ declare module '@polkadot/types/types/registry' {
     UpgradeRestriction: UpgradeRestriction;
     UpwardMessage: UpwardMessage;
     User: User;
-    UserIdType: UserIdType;
     usize: usize;
     USize: USize;
     ValidationCode: ValidationCode;

@@ -2,22 +2,19 @@
 
 export default {
     types: {
-      PageKeyType: 'BoundedVec<u8>',
-      Moment: 'u64',
-
       EpochInfo: {
         number: 'u64',
-        start_time: 'Moment',
+        start_time: 'u64',
         start_block: 'BlockNumber',
-        end_time: 'Moment',
+        end_time: 'u64',
         end_block: 'Option<BlockNumber>'
       },
       
       EraInfo: {
         number: 'u64',
-        start_time: 'Moment',
+        start_time: 'u64',
         start_block: 'BlockNumber',
-        end_time: 'Moment',
+        end_time: 'u64',
         end_block: 'Option<BlockNumber>'
       },
 
@@ -57,7 +54,7 @@ export default {
         start_at: 'BlockNumber',
         update_at: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<PageKeyType>'
+        page_next_key: 'Option<Vec<u8>>'
       },
 
       ManagerWRWorkload: {
@@ -89,7 +86,7 @@ export default {
         start_at: 'BlockNumber',
         update_at: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<PageKeyType>'
+        page_next_key: 'Option<Vec<u8>>'
       },
 
       ManagerRPWorkload: {
@@ -121,7 +118,7 @@ export default {
         start_at: 'BlockNumber',
         update_at: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<PageKeyType>'
+        page_next_key: 'Option<Vec<u8>>'
       },
 
       ManagerCSWorkload: {

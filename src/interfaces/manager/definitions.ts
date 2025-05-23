@@ -2,10 +2,6 @@
 
 export default {
     types: {
-      HostAddressType: 'BoundedVec<u8>',
-      OperatorNameType: 'BoundedVec<u8>',
-      OperatorDescType: 'BoundedVec<u8>',
-      OperatorUrlType: 'BoundedVec<u8>',
       ManagerRegisterStatus: {
         _enum: ['RsPendingBind', 'RsPendingConfig', 'RsPendingActivate', 'RsActivate']
       },
@@ -15,12 +11,12 @@ export default {
       Manager: {
         manager_account: 'AccountId',
         operator_account: 'Option<AccountId>',
-        host_address: 'HostAddressType',
+        host_address: 'Vec<u8>',
         manager_http_port: 'u16',
         manager_ws_port: 'u16',
         chain_api_port: 'u16',
         chain_rpc_port: 'u16',
-        region_code: 'RegionCodeType',
+        region_code: 'Vec<u8>',
         register_status: 'ManagerRegisterStatus',
         working_status: 'ManagerWorkingStatus',
         creator: 'AccountId',
@@ -32,9 +28,9 @@ export default {
         operator_account: 'AccountId',
         manager_account: 'Option<AccountId>',
         evm_account: 'Option<H160>',
-        name: 'OperatorNameType',
-        description: 'OperatorDescType',
-        website: 'OperatorUrlType',
+        name: 'Vec<u8>',
+        description: 'Vec<u8>',
+        website: 'Vec<u8>',
         creator: 'AccountId',
         create_at: 'BlockNumber',
         updator: 'AccountId',

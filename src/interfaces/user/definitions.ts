@@ -2,9 +2,8 @@
 
 export default {
     types: {
-        UserIdType: 'BoundedVec<u8>',
         User: {
-          user_id: 'UserIdType',
+          user_id: 'Vec<u8>',
           evm_account: 'Option<H160>',
           creator: 'AccountId',
           create_at: 'BlockNumber',

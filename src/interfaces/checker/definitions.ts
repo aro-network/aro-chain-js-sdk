@@ -2,17 +2,16 @@
 
 export default {
     types: {
-      PortsListType: 'BoundedVec<u16>',
       CheckerRegisterStatus: {
         _enum: ['RsPendingActivate', 'RsActivate']
       },
       Checker: {
         checker_account: 'AccountId',
         checker_pubkey: '[u8;32]',
-        region_code: 'RegionCodeType',
-        host_address: 'HostAddressType',
+        region_code: 'Vec<u8>',
+        host_address: 'Vec<u8>',
         http_port: 'u16',
-        perf_ports: 'PortsListType',
+        perf_ports: 'Vec<u16>',
         register_status: 'CheckerRegisterStatus',
         creator: 'AccountId',
         create_at: 'BlockNumber',
@@ -22,7 +21,7 @@ export default {
       Scheduler: {
         scheduler_account: 'AccountId',
         scheduler_pubkey: '[u8;32]',
-        host_address: 'HostAddressType',
+        host_address: 'Vec<u8>',
         http_port: 'u16',
         creator: 'AccountId',
         create_at: 'BlockNumber',
