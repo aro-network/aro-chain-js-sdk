@@ -5,7 +5,7 @@ This is the JavaScript SDK for [Enreach Chain](https://github.com/EnreachNetwork
 ## Usage
 
 
-## Sync and Build
+## Build and Publish
 
 ### Update definitions.ts manually
 
@@ -28,18 +28,7 @@ Run the following command to regenerate the types based on the latest metadata a
 npm run gen
 ```
 
-### Manual corrections
-
-The current version (^16.0.1) of @polkadot/typegen seems like to have bugs when generate the `./src/interfaces/augment-api.ts`. Manually remove the .js suffix from the import statement.
-
-The file should look like the following:
-
-```javascript
-import './augment-api-consts';
-import './augment-api-errors';
-import './augment-api-events';
-import './augment-api-query';
-import './augment-api-tx';
-import './augment-api-rpc';
-import './augment-api-runtime';
+### Build and publish
+```shell
+npm run pub
 ```
