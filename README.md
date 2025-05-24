@@ -4,6 +4,23 @@ This is the JavaScript SDK for [Enreach Chain](https://github.com/EnreachNetwork
 
 ## Usage
 
+Install the package
+```javascript
+npm install @aro-network/aro-chain-js
+```
+
+Import and use with polkadot.js
+```javascript
+import { ApiPromise, WsProvider } from '@polkadot/api';
+import { typesBundleForAroNetwork } from '@aro-network/aro-chain-js';
+
+const api = new ApiPromise({
+    provider: new WsProvider("ws://localhost:9944"),
+    typesBundle: typesBundleForAroNetwork
+});
+```
+
+Now it's good to go, also you can get intellisense in the IDE for all the types in the Aro Chain.
 
 ## Build and Publish
 
@@ -23,7 +40,7 @@ curl -H "Content-Type: application/json" -d '{"id":"1", "jsonrpc":"2.0", "method
 
 ### Regenerate the types
 
-Run the following command to regenerate the types based on the latest metadata and updated definitions.ts files
+Run the following command to regenerate the types based on the latest metadata and the manually updated definitions.ts files
 ```shell
 npm run gen
 ```
