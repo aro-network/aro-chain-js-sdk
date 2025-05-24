@@ -1,8 +1,8 @@
-import './interfaces/augment-api';
-import './interfaces/augment-types';
-import './interfaces/index';
-import './interfaces/types-lookup';
-import * as definitions from './interfaces/definitions';
+import './types/interfaces/augment-api';
+import './types/interfaces/augment-types';
+import './types/interfaces/index';
+import './types/interfaces/types-lookup';
+import * as definitions from './types/interfaces/definitions';
 
 // extract all types from definitions - fast and dirty approach, flatted on 'types'
 const enreachTypes = Object.values(definitions).reduce((res, { types }): object => ({ ...res, ...types }), {});

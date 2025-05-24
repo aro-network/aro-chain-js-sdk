@@ -1,8 +1,7 @@
 {
-  "compilerOptions": {    
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
     "rootDir": "./",
     "outDir": "./dist",
     "esModuleInterop": true,
@@ -11,13 +10,13 @@
     "declaration": true,
     "paths": {
       // this is the package name we use (in the interface imports, --package for generators)
-      "@aro-network/types/interfaces/*": ["./src/interfaces/*"],
+      "@aro-network/types/interfaces/*": ["./types/interfaces/*"],
       // here we replace the @polkadot/api augmentation with our own, generated from chain
-      "@polkadot/api/augment": ["./src/interfaces/augment-api.ts"],
+      "@polkadot/api/augment": ["./types/interfaces/augment-api.ts"],
       // replace the augmented types with our own, as generated from definitions
-      "@polkadot/types/augment": ["./src/interfaces/augment-types.ts"],
+      "@polkadot/types/augment": ["./types/interfaces/augment-types.ts"],
       // here we replace the @polkadot/types/lookup with our own, generated from chain
-      "@polkadot/types/lookup": ["./src/interfaces/types-lookup.ts"]
+      "@polkadot/types/lookup": ["./types/interfaces/types-lookup.ts"]
     },
   }
 }

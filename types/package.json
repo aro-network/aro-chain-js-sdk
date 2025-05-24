@@ -1,0 +1,20 @@
+{
+  "name": "@aro-network/aro-chain-js/types",
+  "description": "Aro Chain JS SDK Type Definitions",
+  "dependencies": {
+    "@polkadot/api": "^16.0.1",
+    "@polkadot/types": "^16.0.1"
+  },
+  "devDependencies": {
+    "@polkadot/typegen": "^16.0.1",
+    "@types/node": "^14.14.31",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "type": "module",
+  "scripts": {
+    "gen": "npm run generate:defs && npm run generate:meta",
+    "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @aro-network/types/interfaces --input ./interfaces --endpoint ./metadata.json",
+    "generate:meta": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-chain --package @aro-network/types/interfaces --endpoint ./metadata.json --output ./interfaces"
+  }
+}

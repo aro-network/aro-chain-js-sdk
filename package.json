@@ -1,9 +1,9 @@
 {
   "name": "@aro-network/aro-chain-js",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Aro Chain JS SDK",
-  "main": "src/index.js",
-  "repository": "https://github.com/EnreachNetwork/enreach-chain.git",
+  "main": "index.js",
+  "repository": "https://github.com/EnreachNetwork/enreach-chain-js-sdk.git",
   "author": "Brian Wu <brian@enreach.network>",
   "licenses": [
     {
@@ -24,10 +24,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
-  "type": "module",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "rm -rf dist && tsc -p tsconfig.build.json && cp ./package.json ./dist && cp README.md ./dist",
+    "build": "rm -rf dist && tsc && cp ./package.json ./dist && cp README.md ./dist",
     "pub": "npm run build && cd dist && npm publish --access public",
     "gen": "npm run generate:defs && npm run generate:meta",
     "generate:defs": "node --experimental-specifier-resolution=node --loader ts-node/esm node_modules/.bin/polkadot-types-from-defs --package @aro-network/types/interfaces --input ./src/interfaces --endpoint ./metadata.json",
