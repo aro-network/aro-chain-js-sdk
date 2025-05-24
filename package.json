@@ -1,6 +1,6 @@
 {
   "name": "@aro-network/aro-chain-js",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Aro Chain JS SDK",
   "main": "src/index.js",
   "repository": "https://github.com/EnreachNetwork/enreach-chain.git",
