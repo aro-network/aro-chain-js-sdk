@@ -2,7 +2,7 @@
   "name": "@aro-network/aro-chain-js",
   "version": "0.1.5",
   "description": "Aro Chain JS SDK",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "repository": "https://github.com/EnreachNetwork/enreach-chain.git",
   "author": "Brian Wu <brian@enreach.network>",
   "licenses": [
@@ -20,10 +20,10 @@
   },
   "devDependencies": {
     "@polkadot/typegen": "^16.0.1",
+    "@types/node": "^14.14.31",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
-  "type": "module",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "rm -rf dist && tsc && cp ./package.json ./dist && cp README.md ./dist",
