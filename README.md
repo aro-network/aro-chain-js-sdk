@@ -29,7 +29,7 @@ await tx.signAndSend(keyring.alice, ({events = [], status}) => {});
 const regions = await api.query.registry.regions.entries();
 
 const allRegions = regions.map(([key, value]) => {
-    return value.unwrap() as unknown as Region;
+    return value.unwrap().toHuman() as unknown as Region;
 });
 ```
 
