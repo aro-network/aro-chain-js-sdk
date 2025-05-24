@@ -9,11 +9,11 @@ export default {
         _enum: ['CsNormal', 'CsSuspicious', 'CsBlacklist']
       },
       Node: {
-        node_id: 'Vec<u8>',
+        node_id: 'string',
         node_pubkey: 'Vec<u8>',
-        user_id: 'Vec<u8>',
-        device_type: 'Vec<u8>',
-        region_code: 'Vec<u8>',
+        user_id: 'string',
+        device_type: 'string',
+        region_code: 'string',
         traffic_type: 'u32',
         register_status: 'NodeRegisterStatus',
         cheat_status: 'CheatStatus',

@@ -1,19 +1,19 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Bytes, Enum, Option, Struct, u16 } from '@polkadot/types-codec';
+import type { Enum, Option, Struct, u16 } from '@polkadot/types-codec';
 import type { AccountId, BlockNumber, H160 } from '@polkadot/types/interfaces/runtime';
 
 /** @name Manager */
 export interface Manager extends Struct {
   readonly manager_account: AccountId;
   readonly operator_account: Option<AccountId>;
-  readonly host_address: Bytes;
+  readonly host_address: string;
   readonly manager_http_port: u16;
   readonly manager_ws_port: u16;
   readonly chain_api_port: u16;
   readonly chain_rpc_port: u16;
-  readonly region_code: Bytes;
+  readonly region_code: string;
   readonly register_status: ManagerRegisterStatus;
   readonly working_status: ManagerWorkingStatus;
   readonly creator: AccountId;
@@ -44,9 +44,9 @@ export interface Operator extends Struct {
   readonly operator_account: AccountId;
   readonly manager_account: Option<AccountId>;
   readonly evm_account: Option<H160>;
-  readonly name: Bytes;
-  readonly description: Bytes;
-  readonly website: Bytes;
+  readonly name: string;
+  readonly description: string;
+  readonly website: string;
   readonly creator: AccountId;
   readonly create_at: BlockNumber;
   readonly updator: AccountId;

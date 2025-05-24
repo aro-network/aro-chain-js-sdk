@@ -3,7 +3,7 @@
 export default {
     types: {
         User: {
-          user_id: 'Vec<u8>',
+          user_id: 'string',
           evm_account: 'Option<H160>',
           creator: 'AccountId',
           create_at: 'BlockNumber',

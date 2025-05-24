@@ -14,11 +14,11 @@ export interface CheatStatus extends Enum {
 
 /** @name Node */
 export interface Node extends Struct {
-  readonly node_id: Bytes;
+  readonly node_id: string;
   readonly node_pubkey: Bytes;
-  readonly user_id: Bytes;
-  readonly device_type: Bytes;
-  readonly region_code: Bytes;
+  readonly user_id: string;
+  readonly device_type: string;
+  readonly region_code: string;
   readonly traffic_type: u32;
   readonly register_status: NodeRegisterStatus;
   readonly cheat_status: CheatStatus;

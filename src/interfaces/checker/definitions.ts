@@ -8,8 +8,8 @@ export default {
       Checker: {
         checker_account: 'AccountId',
         checker_pubkey: '[u8;32]',
-        region_code: 'Vec<u8>',
-        host_address: 'Vec<u8>',
+        region_code: 'string',
+        host_address: 'string',
         http_port: 'u16',
         perf_ports: 'Vec<u16>',
         register_status: 'CheckerRegisterStatus',
@@ -21,7 +21,7 @@ export default {
       Scheduler: {
         scheduler_account: 'AccountId',
         scheduler_pubkey: '[u8;32]',
-        host_address: 'Vec<u8>',
+        host_address: 'string',
         http_port: 'u16',
         creator: 'AccountId',
         create_at: 'BlockNumber',
