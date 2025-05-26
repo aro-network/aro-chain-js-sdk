@@ -9,32 +9,32 @@ export default {
         _enum: ['WsWorking', 'WsOffline', 'WsBlock']
       },
       Manager: {
-        manager_account: 'AccountId',
-        operator_account: 'Option<AccountId>',
-        host_address: 'string',
-        manager_http_port: 'u16',
-        manager_ws_port: 'u16',
-        chain_api_port: 'u16',
-        chain_rpc_port: 'u16',
-        region_code: 'string',
-        register_status: 'ManagerRegisterStatus',
-        working_status: 'ManagerWorkingStatus',
+        managerAccount: 'AccountId',
+        operatorAccount: 'Option<AccountId>',
+        hostAddress: 'string',
+        managerHttpPort: 'u16',
+        managerWsPort: 'u16',
+        chainApiPort: 'u16',
+        chainRpcPort: 'u16',
+        regionCode: 'string',
+        registerStatus: 'ManagerRegisterStatus',
+        workingStatus: 'ManagerWorkingStatus',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       },
       Operator: {
-        operator_account: 'AccountId',
-        manager_account: 'Option<AccountId>',
-        evm_account: 'Option<H160>',
+        operatorAccount: 'AccountId',
+        managerAccount: 'Option<AccountId>',
+        evmAccount: 'Option<H160>',
         name: 'string',
         description: 'string',
         website: 'string',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       }
     }
 };

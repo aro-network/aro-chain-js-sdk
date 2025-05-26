@@ -10,9 +10,9 @@ export interface Region extends Struct {
   readonly name: string;
   readonly description: string;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 export type PHANTOM_REGION = 'region';

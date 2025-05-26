@@ -6,27 +6,27 @@ export default {
         _enum: ['RsPendingActivate', 'RsActivate']
       },
       Checker: {
-        checker_account: 'AccountId',
-        checker_pubkey: '[u8;32]',
-        region_code: 'string',
-        host_address: 'string',
-        http_port: 'u16',
-        perf_ports: 'Vec<u16>',
-        register_status: 'CheckerRegisterStatus',
+        checkerAccount: 'AccountId',
+        checkerPubkey: '[u8;32]',
+        regionCode: 'string',
+        hostAddress: 'string',
+        httpPort: 'u16',
+        perfPorts: 'Vec<u16>',
+        registerStatus: 'CheckerRegisterStatus',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       },
       Scheduler: {
-        scheduler_account: 'AccountId',
-        scheduler_pubkey: '[u8;32]',
-        host_address: 'string',
-        http_port: 'u16',
+        schedulerAccount: 'AccountId',
+        schedulerPubkey: '[u8;32]',
+        hostAddress: 'string',
+        httpPort: 'u16',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       }
     }
 };

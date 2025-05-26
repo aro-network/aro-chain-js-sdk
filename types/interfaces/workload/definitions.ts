@@ -4,18 +4,18 @@ export default {
     types: {
       EpochInfo: {
         number: 'u64',
-        start_time: 'u64',
-        start_block: 'BlockNumber',
-        end_time: 'u64',
-        end_block: 'Option<BlockNumber>'
+        startTime: 'u64',
+        startBlock: 'BlockNumber',
+        endTime: 'u64',
+        endBlock: 'Option<BlockNumber>'
       },
       
       EraInfo: {
         number: 'u64',
-        start_time: 'u64',
-        start_block: 'BlockNumber',
-        end_time: 'u64',
-        end_block: 'Option<BlockNumber>'
+        startTime: 'u64',
+        startBlock: 'BlockNumber',
+        endTime: 'u64',
+        endBlock: 'Option<BlockNumber>'
       },
 
       ParamKey: {
@@ -38,96 +38,96 @@ export default {
       // Workreport related
       Workreport: {
         score: 'u64',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       },
 
       NodeWorkload: {
         score: 'u64',
-        create_at: 'BlockNumber'
+        createAt: 'BlockNumber'
       },
 
       WorkreportProcessData: {
         epoch: 'u64',
-        total_nodes_count: 'u64',
-        processed_nodes_count: 'u64',
-        start_at: 'BlockNumber',
-        update_at: 'BlockNumber',
+        totalNodesCount: 'u64',
+        processedNodesCount: 'u64',
+        startAt: 'BlockNumber',
+        updateAt: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<Vec<u8>>'
+        pageNextKey: 'Option<Vec<u8>>'
       },
 
       ManagerWRWorkload: {
         epoch: 'u64',
-        manager_account: 'AccountId',
-        reported_nodes_count: 'u64',
+        managerAccount: 'AccountId',
+        reportedNodesCount: 'u64',
         score: 'u64',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       },
 
       // ---------------------------
       // Reputation Points related
       ReputationPointChangeRequest: {
-        delta_point: 'i64',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        deltaPoint: 'i64',
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       },
 
       ReputationDeltaPoint: {
-        delta_point: 'i64',
-        create_at: 'BlockNumber'
+        deltaPoint: 'i64',
+        createAt: 'BlockNumber'
       },
 
       ReputationPointProcessData: {
         era: 'u64',
-        total_nodes_count: 'u64',
-        processed_nodes_count: 'u64',
-        start_at: 'BlockNumber',
-        update_at: 'BlockNumber',
+        totalNodesCount: 'u64',
+        processedNodesCount: 'u64',
+        startAt: 'BlockNumber',
+        updateAt: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<Vec<u8>>'
+        pageNextKey: 'Option<Vec<u8>>'
       },
 
       ManagerRPWorkload: {
         era: 'u64',
-        manager_account: 'AccountId',
-        reported_nodes_count: 'u64',
+        managerAccount: 'AccountId',
+        reportedNodesCount: 'u64',
         score: 'u64',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       },
 
       // ---------------------------
       // Cheat Status related
       CheatStatusChangeRequest: {
-        cheat_status: 'CheatStatus',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        cheatStatus: 'CheatStatus',
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       },
 
       CheatStatusResult: {
-        cheat_status: 'CheatStatus',
-        create_at: 'BlockNumber'
+        cheatStatus: 'CheatStatus',
+        createAt: 'BlockNumber'
       },
 
       CheatStatusProcessData: {
         era: 'u64',
-        total_nodes_count: 'u64',
-        processed_nodes_count: 'u64',
-        start_at: 'BlockNumber',
-        update_at: 'BlockNumber',
+        totalNodesCount: 'u64',
+        processedNodesCount: 'u64',
+        startAt: 'BlockNumber',
+        updateAt: 'BlockNumber',
         status: 'ProcessStatus',
-        page_next_key: 'Option<Vec<u8>>'
+        pageNextKey: 'Option<Vec<u8>>'
       },
 
       ManagerCSWorkload: {
         era: 'u64',
-        manager_account: 'AccountId',
-        reported_nodes_count: 'u64',
+        managerAccount: 'AccountId',
+        reportedNodesCount: 'u64',
         score: 'u64',
-        create_at: 'BlockNumber',
-        update_at: 'BlockNumber'
+        createAt: 'BlockNumber',
+        updateAt: 'BlockNumber'
       }
     }
 };

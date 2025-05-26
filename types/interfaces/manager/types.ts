@@ -6,20 +6,20 @@ import type { AccountId, BlockNumber, H160 } from '@polkadot/types/interfaces/ru
 
 /** @name Manager */
 export interface Manager extends Struct {
-  readonly manager_account: AccountId;
-  readonly operator_account: Option<AccountId>;
-  readonly host_address: string;
-  readonly manager_http_port: u16;
-  readonly manager_ws_port: u16;
-  readonly chain_api_port: u16;
-  readonly chain_rpc_port: u16;
-  readonly region_code: string;
-  readonly register_status: ManagerRegisterStatus;
-  readonly working_status: ManagerWorkingStatus;
+  readonly managerAccount: AccountId;
+  readonly operatorAccount: Option<AccountId>;
+  readonly hostAddress: string;
+  readonly managerHttpPort: u16;
+  readonly managerWsPort: u16;
+  readonly chainApiPort: u16;
+  readonly chainRpcPort: u16;
+  readonly regionCode: string;
+  readonly registerStatus: ManagerRegisterStatus;
+  readonly workingStatus: ManagerWorkingStatus;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name ManagerRegisterStatus */
@@ -41,16 +41,16 @@ export interface ManagerWorkingStatus extends Enum {
 
 /** @name Operator */
 export interface Operator extends Struct {
-  readonly operator_account: AccountId;
-  readonly manager_account: Option<AccountId>;
-  readonly evm_account: Option<H160>;
+  readonly operatorAccount: AccountId;
+  readonly managerAccount: Option<AccountId>;
+  readonly evmAccount: Option<H160>;
   readonly name: string;
   readonly description: string;
   readonly website: string;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 export type PHANTOM_MANAGER = 'manager';

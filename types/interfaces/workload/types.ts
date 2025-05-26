@@ -7,80 +7,80 @@ import type { AccountId, BlockNumber } from '@polkadot/types/interfaces/runtime'
 
 /** @name CheatStatusChangeRequest */
 export interface CheatStatusChangeRequest extends Struct {
-  readonly cheat_status: CheatStatus;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly cheatStatus: CheatStatus;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name CheatStatusProcessData */
 export interface CheatStatusProcessData extends Struct {
   readonly era: u64;
-  readonly total_nodes_count: u64;
-  readonly processed_nodes_count: u64;
-  readonly start_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly totalNodesCount: u64;
+  readonly processedNodesCount: u64;
+  readonly startAt: BlockNumber;
+  readonly updateAt: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<Bytes>;
+  readonly pageNextKey: Option<Bytes>;
 }
 
 /** @name CheatStatusResult */
 export interface CheatStatusResult extends Struct {
-  readonly cheat_status: CheatStatus;
-  readonly create_at: BlockNumber;
+  readonly cheatStatus: CheatStatus;
+  readonly createAt: BlockNumber;
 }
 
 /** @name EpochInfo */
 export interface EpochInfo extends Struct {
   readonly number: u64;
-  readonly start_time: u64;
-  readonly start_block: BlockNumber;
-  readonly end_time: u64;
-  readonly end_block: Option<BlockNumber>;
+  readonly startTime: u64;
+  readonly startBlock: BlockNumber;
+  readonly endTime: u64;
+  readonly endBlock: Option<BlockNumber>;
 }
 
 /** @name EraInfo */
 export interface EraInfo extends Struct {
   readonly number: u64;
-  readonly start_time: u64;
-  readonly start_block: BlockNumber;
-  readonly end_time: u64;
-  readonly end_block: Option<BlockNumber>;
+  readonly startTime: u64;
+  readonly startBlock: BlockNumber;
+  readonly endTime: u64;
+  readonly endBlock: Option<BlockNumber>;
 }
 
 /** @name ManagerCSWorkload */
 export interface ManagerCSWorkload extends Struct {
   readonly era: u64;
-  readonly manager_account: AccountId;
-  readonly reported_nodes_count: u64;
+  readonly managerAccount: AccountId;
+  readonly reportedNodesCount: u64;
   readonly score: u64;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name ManagerRPWorkload */
 export interface ManagerRPWorkload extends Struct {
   readonly era: u64;
-  readonly manager_account: AccountId;
-  readonly reported_nodes_count: u64;
+  readonly managerAccount: AccountId;
+  readonly reportedNodesCount: u64;
   readonly score: u64;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name ManagerWRWorkload */
 export interface ManagerWRWorkload extends Struct {
   readonly epoch: u64;
-  readonly manager_account: AccountId;
-  readonly reported_nodes_count: u64;
+  readonly managerAccount: AccountId;
+  readonly reportedNodesCount: u64;
   readonly score: u64;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name NodeWorkload */
 export interface NodeWorkload extends Struct {
   readonly score: u64;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
 }
 
 /** @name ParamKey */
@@ -105,44 +105,44 @@ export interface ProcessStatus extends Enum {
 
 /** @name ReputationDeltaPoint */
 export interface ReputationDeltaPoint extends Struct {
-  readonly delta_point: i64;
-  readonly create_at: BlockNumber;
+  readonly deltaPoint: i64;
+  readonly createAt: BlockNumber;
 }
 
 /** @name ReputationPointChangeRequest */
 export interface ReputationPointChangeRequest extends Struct {
-  readonly delta_point: i64;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly deltaPoint: i64;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name ReputationPointProcessData */
 export interface ReputationPointProcessData extends Struct {
   readonly era: u64;
-  readonly total_nodes_count: u64;
-  readonly processed_nodes_count: u64;
-  readonly start_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly totalNodesCount: u64;
+  readonly processedNodesCount: u64;
+  readonly startAt: BlockNumber;
+  readonly updateAt: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<Bytes>;
+  readonly pageNextKey: Option<Bytes>;
 }
 
 /** @name Workreport */
 export interface Workreport extends Struct {
   readonly score: u64;
-  readonly create_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly createAt: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name WorkreportProcessData */
 export interface WorkreportProcessData extends Struct {
   readonly epoch: u64;
-  readonly total_nodes_count: u64;
-  readonly processed_nodes_count: u64;
-  readonly start_at: BlockNumber;
-  readonly update_at: BlockNumber;
+  readonly totalNodesCount: u64;
+  readonly processedNodesCount: u64;
+  readonly startAt: BlockNumber;
+  readonly updateAt: BlockNumber;
   readonly status: ProcessStatus;
-  readonly page_next_key: Option<Bytes>;
+  readonly pageNextKey: Option<Bytes>;
 }
 
 export type PHANTOM_WORKLOAD = 'workload';

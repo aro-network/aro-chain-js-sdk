@@ -6,12 +6,12 @@ import type { AccountId, BlockNumber, H160 } from '@polkadot/types/interfaces/ru
 
 /** @name User */
 export interface User extends Struct {
-  readonly user_id: string;
-  readonly evm_account: Option<H160>;
+  readonly userId: string;
+  readonly evmAccount: Option<H160>;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 export type PHANTOM_USER = 'user';

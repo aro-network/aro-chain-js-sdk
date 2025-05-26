@@ -7,9 +7,9 @@ export default {
         name: 'string',
         description: 'string',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       }
     }
 };

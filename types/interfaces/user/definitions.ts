@@ -3,12 +3,12 @@
 export default {
     types: {
         User: {
-          user_id: 'string',
-          evm_account: 'Option<H160>',
+          userId: 'string',
+          evmAccount: 'Option<H160>',
           creator: 'AccountId',
-          create_at: 'BlockNumber',
+          createAt: 'BlockNumber',
           updator: 'AccountId',
-          update_at: 'BlockNumber'
+          updateAt: 'BlockNumber'
         }
     }
 };

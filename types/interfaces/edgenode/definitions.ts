@@ -9,19 +9,19 @@ export default {
         _enum: ['CsNormal', 'CsSuspicious', 'CsBlacklist']
       },
       Node: {
-        node_id: 'string',
-        node_pubkey: 'Vec<u8>',
-        user_id: 'string',
-        device_type: 'string',
-        region_code: 'string',
-        traffic_type: 'u32',
-        register_status: 'NodeRegisterStatus',
-        cheat_status: 'CheatStatus',
-        reputation_point: 'i64',
+        nodeId: 'string',
+        nodePubkey: 'Vec<u8>',
+        userId: 'string',
+        deviceType: 'string',
+        regionCode: 'string',
+        trafficType: 'u32',
+        registerStatus: 'NodeRegisterStatus',
+        cheatStatus: 'CheatStatus',
+        reputationPoint: 'i64',
         creator: 'AccountId',
-        create_at: 'BlockNumber',
+        createAt: 'BlockNumber',
         updator: 'AccountId',
-        update_at: 'BlockNumber'
+        updateAt: 'BlockNumber'
       }
     }
 };

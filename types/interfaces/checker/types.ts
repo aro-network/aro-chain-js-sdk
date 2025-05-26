@@ -6,17 +6,17 @@ import type { AccountId, BlockNumber } from '@polkadot/types/interfaces/runtime'
 
 /** @name Checker */
 export interface Checker extends Struct {
-  readonly checker_account: AccountId;
-  readonly checker_pubkey: U8aFixed;
-  readonly region_code: string;
-  readonly host_address: string;
-  readonly http_port: u16;
-  readonly perf_ports: Vec<u16>;
-  readonly register_status: CheckerRegisterStatus;
+  readonly checkerAccount: AccountId;
+  readonly checkerPubkey: U8aFixed;
+  readonly regionCode: string;
+  readonly hostAddress: string;
+  readonly httpPort: u16;
+  readonly perfPorts: Vec<u16>;
+  readonly registerStatus: CheckerRegisterStatus;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 /** @name CheckerRegisterStatus */
@@ -28,14 +28,14 @@ export interface CheckerRegisterStatus extends Enum {
 
 /** @name Scheduler */
 export interface Scheduler extends Struct {
-  readonly scheduler_account: AccountId;
-  readonly scheduler_pubkey: U8aFixed;
-  readonly host_address: string;
-  readonly http_port: u16;
+  readonly schedulerAccount: AccountId;
+  readonly schedulerPubkey: U8aFixed;
+  readonly hostAddress: string;
+  readonly httpPort: u16;
   readonly creator: AccountId;
-  readonly create_at: BlockNumber;
+  readonly createAt: BlockNumber;
   readonly updator: AccountId;
-  readonly update_at: BlockNumber;
+  readonly updateAt: BlockNumber;
 }
 
 export type PHANTOM_CHECKER = 'checker';
