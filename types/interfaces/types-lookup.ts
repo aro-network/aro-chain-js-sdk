@@ -542,8 +542,8 @@ declare module '@polkadot/types/lookup' {
       readonly updator: AccountId32;
       readonly updateAt: u64;
     } & Struct;
-    readonly isWorkReportsSubmitted: boolean;
-    readonly asWorkReportsSubmitted: {
+    readonly isWorkreportsSubmitted: boolean;
+    readonly asWorkreportsSubmitted: {
       readonly manager: AccountId32;
       readonly epoch: u64;
       readonly nodesCount: u32;
@@ -635,7 +635,7 @@ declare module '@polkadot/types/lookup' {
       readonly startAt: u64;
       readonly endAt: u64;
     } & Struct;
-    readonly type: 'SuperiorSet' | 'ParamUpdated' | 'WorkReportsSubmitted' | 'ReputationPointChangeRequestsSubmitted' | 'CheatStatusChangeRequestsSubmitted' | 'EpochStarted' | 'EpochEnded' | 'EraStarted' | 'EraEnded' | 'WorkreportsProcessStarted' | 'WorkreportsProcessEnded' | 'ReputationPointsProcessStarted' | 'ReputationPointsProcessEnded' | 'CheatStatusProcessStarted' | 'CheatStatusProcessEnded';
+    readonly type: 'SuperiorSet' | 'ParamUpdated' | 'WorkreportsSubmitted' | 'ReputationPointChangeRequestsSubmitted' | 'CheatStatusChangeRequestsSubmitted' | 'EpochStarted' | 'EpochEnded' | 'EraStarted' | 'EraEnded' | 'WorkreportsProcessStarted' | 'WorkreportsProcessEnded' | 'ReputationPointsProcessStarted' | 'ReputationPointsProcessEnded' | 'CheatStatusProcessStarted' | 'CheatStatusProcessEnded';
   }
 
   /** @name EnreachPrimitivesWorkloadParamKey (52) */
@@ -1233,8 +1233,8 @@ declare module '@polkadot/types/lookup' {
       readonly key: EnreachPrimitivesWorkloadParamKey;
       readonly value: u32;
     } & Struct;
-    readonly isSubmitWorkReports: boolean;
-    readonly asSubmitWorkReports: {
+    readonly isSubmitWorkreports: boolean;
+    readonly asSubmitWorkreports: {
       readonly epoch: u64;
       readonly nodeScores: Vec<ITuple<[Bytes, u64]>>;
     } & Struct;
@@ -1248,7 +1248,7 @@ declare module '@polkadot/types/lookup' {
       readonly era: u64;
       readonly nodeDatas: Vec<ITuple<[Bytes, EnreachPrimitivesEdgenodeCheatStatus]>>;
     } & Struct;
-    readonly type: 'SetSuperior' | 'UpdateParam' | 'SubmitWorkReports' | 'SubmitReputationPoints' | 'SubmitCheatStatus';
+    readonly type: 'SetSuperior' | 'UpdateParam' | 'SubmitWorkreports' | 'SubmitReputationPoints' | 'SubmitCheatStatus';
   }
 
   /** @name EnreachPrimitivesEdgenodeCheatStatus (142) */

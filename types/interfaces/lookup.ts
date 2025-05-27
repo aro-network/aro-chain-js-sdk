@@ -485,7 +485,7 @@ export default {
         updator: 'AccountId32',
         updateAt: 'u64',
       },
-      WorkReportsSubmitted: {
+      WorkreportsSubmitted: {
         manager: 'AccountId32',
         epoch: 'u64',
         nodesCount: 'u32',
@@ -1127,7 +1127,7 @@ export default {
         key: 'EnreachPrimitivesWorkloadParamKey',
         value: 'u32',
       },
-      submit_work_reports: {
+      submit_workreports: {
         epoch: 'u64',
         nodeScores: 'Vec<(Bytes,u64)>',
       },

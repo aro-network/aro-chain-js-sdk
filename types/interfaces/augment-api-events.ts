@@ -398,7 +398,7 @@ declare module '@polkadot/api-base/types/events' {
       /**
        * Workreports submitted
        **/
-      WorkReportsSubmitted: AugmentedEvent<ApiType, [manager: AccountId32, epoch: u64, nodesCount: u32, submittedAt: u64], { manager: AccountId32, epoch: u64, nodesCount: u32, submittedAt: u64 }>;
+      WorkreportsSubmitted: AugmentedEvent<ApiType, [manager: AccountId32, epoch: u64, nodesCount: u32, submittedAt: u64], { manager: AccountId32, epoch: u64, nodesCount: u32, submittedAt: u64 }>;
       /**
        * Generic event
        **/
