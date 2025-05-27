@@ -1,7 +1,10 @@
+import './types/interfaces/registry';
+import './types/interfaces/lookup';
+import './types/interfaces/types-lookup';
 import './types/interfaces/augment-api';
 import './types/interfaces/augment-types';
 import './types/interfaces/index';
-import './types/interfaces/types-lookup';
+
 import * as definitions from './types/interfaces/definitions';
 
 // extract all types from definitions - fast and dirty approach, flatted on 'types'

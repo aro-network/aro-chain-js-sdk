@@ -5,12 +5,7 @@
 // this is required to allow for ambient/previous definitions
 import '@polkadot/types/types/registry';
 
-import type { Checker, CheckerRegisterStatus, Scheduler } from '@aro-network/types/interfaces/checker';
-import type { CheatStatus, Node, NodeRegisterStatus } from '@aro-network/types/interfaces/edgenode';
-import type { Manager, ManagerRegisterStatus, ManagerWorkingStatus, Operator } from '@aro-network/types/interfaces/manager';
-import type { Region } from '@aro-network/types/interfaces/region';
-import type { User } from '@aro-network/types/interfaces/user';
-import type { CheatStatusChangeRequest, CheatStatusProcessData, CheatStatusResult, EpochInfo, EraInfo, ManagerCSWorkload, ManagerRPWorkload, ManagerWRWorkload, NodeWorkload, ParamKey, ProcessStatus, ReputationDeltaPoint, ReputationPointChangeRequest, ReputationPointProcessData, Workreport, WorkreportProcessData } from '@aro-network/types/interfaces/workload';
+import type { Dummy } from '@aro-network/types/interfaces/dummy';
 import type { Data, StorageKey } from '@polkadot/types';
 import type { BitVec, Bool, Bytes, F32, F64, I128, I16, I256, I32, I64, I8, ISize, Json, Null, OptionBool, Raw, Text, Type, U128, U16, U256, U32, U64, U8, USize, bool, f32, f64, i128, i16, i256, i32, i64, i8, isize, u128, u16, u256, u32, u64, u8, usize } from '@polkadot/types-codec';
 import type { TAssetConversion } from '@polkadot/types/interfaces/assetConversion';
@@ -249,12 +244,6 @@ declare module '@polkadot/types/types/registry' {
     ChainType: ChainType;
     ChangesTrieConfiguration: ChangesTrieConfiguration;
     ChangesTrieSignal: ChangesTrieSignal;
-    CheatStatus: CheatStatus;
-    CheatStatusChangeRequest: CheatStatusChangeRequest;
-    CheatStatusProcessData: CheatStatusProcessData;
-    CheatStatusResult: CheatStatusResult;
-    Checker: Checker;
-    CheckerRegisterStatus: CheckerRegisterStatus;
     CheckInherentsResult: CheckInherentsResult;
     ClassDetails: ClassDetails;
     ClassId: ClassId;
@@ -409,6 +398,7 @@ declare module '@polkadot/types/types/registry' {
     DoubleEncodedCall: DoubleEncodedCall;
     DoubleVoteReport: DoubleVoteReport;
     DownwardMessage: DownwardMessage;
+    Dummy: Dummy;
     EcdsaSignature: EcdsaSignature;
     Ed25519Signature: Ed25519Signature;
     EIP1559Transaction: EIP1559Transaction;
@@ -425,10 +415,8 @@ declare module '@polkadot/types/types/registry' {
     EnumDeprecationInfoV16: EnumDeprecationInfoV16;
     Epoch: Epoch;
     EpochAuthorship: EpochAuthorship;
-    EpochInfo: EpochInfo;
     Era: Era;
     EraIndex: EraIndex;
-    EraInfo: EraInfo;
     EraPoints: EraPoints;
     EraRewardPoints: EraRewardPoints;
     EraRewards: EraRewards;
@@ -708,12 +696,6 @@ declare module '@polkadot/types/types/registry' {
     LookupSource: LookupSource;
     LookupTarget: LookupTarget;
     LotteryConfig: LotteryConfig;
-    Manager: Manager;
-    ManagerCSWorkload: ManagerCSWorkload;
-    ManagerRegisterStatus: ManagerRegisterStatus;
-    ManagerRPWorkload: ManagerRPWorkload;
-    ManagerWorkingStatus: ManagerWorkingStatus;
-    ManagerWRWorkload: ManagerWRWorkload;
     MaxPalletNameLen: MaxPalletNameLen;
     MaxPalletsInfo: MaxPalletsInfo;
     MaybeErrorCodeV3: MaybeErrorCodeV3;
@@ -816,11 +798,8 @@ declare module '@polkadot/types/types/registry' {
     NextConfigDescriptorV1: NextConfigDescriptorV1;
     NftCollectionId: NftCollectionId;
     NftItemId: NftItemId;
-    Node: Node;
     NodeFeatures: NodeFeatures;
-    NodeRegisterStatus: NodeRegisterStatus;
     NodeRole: NodeRole;
-    NodeWorkload: NodeWorkload;
     Nominations: Nominations;
     NominatorIndex: NominatorIndex;
     NominatorIndexCompact: NominatorIndexCompact;
@@ -847,7 +826,6 @@ declare module '@polkadot/types/types/registry' {
     OpenTipTip: OpenTipTip;
     OpenTipTo225: OpenTipTo225;
     OperatingMode: OperatingMode;
-    Operator: Operator;
     OptionBool: OptionBool;
     Origin: Origin;
     OriginCaller: OriginCaller;
@@ -905,7 +883,6 @@ declare module '@polkadot/types/types/registry' {
     ParaInfo: ParaInfo;
     ParaLifecycle: ParaLifecycle;
     Parameter: Parameter;
-    ParamKey: ParamKey;
     ParaPastCodeMeta: ParaPastCodeMeta;
     ParaScheduling: ParaScheduling;
     ParathreadClaim: ParathreadClaim;
@@ -952,7 +929,6 @@ declare module '@polkadot/types/types/registry' {
     Prevotes: Prevotes;
     Priority: Priority;
     PriorLock: PriorLock;
-    ProcessStatus: ProcessStatus;
     PropIndex: PropIndex;
     Proposal: Proposal;
     ProposalIndex: ProposalIndex;
@@ -998,7 +974,6 @@ declare module '@polkadot/types/types/registry' {
     ReferendumInfoFinished: ReferendumInfoFinished;
     ReferendumInfoTo239: ReferendumInfoTo239;
     ReferendumStatus: ReferendumStatus;
-    Region: Region;
     RegisteredParachainInfo: RegisteredParachainInfo;
     RegistrarIndex: RegistrarIndex;
     RegistrarInfo: RegistrarInfo;
@@ -1018,9 +993,6 @@ declare module '@polkadot/types/types/registry' {
     ReportedRoundStates: ReportedRoundStates;
     Reporter: Reporter;
     ReportIdOf: ReportIdOf;
-    ReputationDeltaPoint: ReputationDeltaPoint;
-    ReputationPointChangeRequest: ReputationPointChangeRequest;
-    ReputationPointProcessData: ReputationPointProcessData;
     ReserveData: ReserveData;
     ReserveIdentifier: ReserveIdentifier;
     Response: Response;
@@ -1062,7 +1034,6 @@ declare module '@polkadot/types/types/registry' {
     ScheduledTo254: ScheduledTo254;
     SchedulePeriod: SchedulePeriod;
     SchedulePriority: SchedulePriority;
-    Scheduler: Scheduler;
     ScheduleTo212: ScheduleTo212;
     ScheduleTo258: ScheduleTo258;
     ScheduleTo264: ScheduleTo264;
@@ -1285,7 +1256,6 @@ declare module '@polkadot/types/types/registry' {
     UpgradeGoAhead: UpgradeGoAhead;
     UpgradeRestriction: UpgradeRestriction;
     UpwardMessage: UpwardMessage;
-    User: User;
     usize: usize;
     USize: USize;
     ValidationCode: ValidationCode;
@@ -1367,8 +1337,6 @@ declare module '@polkadot/types/types/registry' {
     WinningData10: WinningData10;
     WinningDataEntry: WinningDataEntry;
     WithdrawReasons: WithdrawReasons;
-    Workreport: Workreport;
-    WorkreportProcessData: WorkreportProcessData;
     Xcm: Xcm;
     XcmAssetId: XcmAssetId;
     XcmDryRunApiError: XcmDryRunApiError;
