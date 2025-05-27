@@ -9,7 +9,7 @@ import type { ApiTypes, AugmentedEvent } from '@polkadot/api-base/types';
 import type { Bytes, Null, Option, Result, Vec, bool, u128, u16, u32, u64 } from '@polkadot/types-codec';
 import type { ITuple } from '@polkadot/types-codec/types';
 import type { AccountId32, H160, H256 } from '@polkadot/types/interfaces/runtime';
-import type { EnreachPrimitivesManagerManagerWorkingStatus, EnreachPrimitivesWorkloadParamKey, FrameSupportTokensMiscBalanceStatus, FrameSystemDispatchEventInfo, SpConsensusGrandpaAppPublic, SpRuntimeDispatchError } from '@polkadot/types/lookup';
+import type { AroPrimitivesManagerManagerWorkingStatus, AroPrimitivesWorkloadParamKey, FrameSupportTokensMiscBalanceStatus, FrameSystemDispatchEventInfo, SpConsensusGrandpaAppPublic, SpRuntimeDispatchError } from '@polkadot/types/lookup';
 
 export type __AugmentedEvent<ApiType extends ApiTypes> = AugmentedEvent<ApiType>;
 
@@ -197,7 +197,7 @@ declare module '@polkadot/api-base/types/events' {
       /**
        * Manager status changed
        **/
-      ManagerGoWorking: AugmentedEvent<ApiType, [manager: AccountId32, status: EnreachPrimitivesManagerManagerWorkingStatus, updateAt: u64], { manager: AccountId32, status: EnreachPrimitivesManagerManagerWorkingStatus, updateAt: u64 }>;
+      ManagerGoWorking: AugmentedEvent<ApiType, [manager: AccountId32, status: AroPrimitivesManagerManagerWorkingStatus, updateAt: u64], { manager: AccountId32, status: AroPrimitivesManagerManagerWorkingStatus, updateAt: u64 }>;
       /**
        * Manager region set
        **/
@@ -370,7 +370,7 @@ declare module '@polkadot/api-base/types/events' {
       /**
        * Param updated
        **/
-      ParamUpdated: AugmentedEvent<ApiType, [key: EnreachPrimitivesWorkloadParamKey, oldValue: u32, newValue: u32, updator: AccountId32, updateAt: u64], { key: EnreachPrimitivesWorkloadParamKey, oldValue: u32, newValue: u32, updator: AccountId32, updateAt: u64 }>;
+      ParamUpdated: AugmentedEvent<ApiType, [key: AroPrimitivesWorkloadParamKey, oldValue: u32, newValue: u32, updator: AccountId32, updateAt: u64], { key: AroPrimitivesWorkloadParamKey, oldValue: u32, newValue: u32, updator: AccountId32, updateAt: u64 }>;
       /**
        * Reputation point change requests submitted
        **/

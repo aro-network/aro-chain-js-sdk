@@ -1,10 +1,10 @@
 {
   "name": "@aro-network/aro-chain-js",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Aro Chain JS SDK",
   "main": "index.js",
-  "repository": "https://github.com/EnreachNetwork/enreach-chain-js-sdk.git",
-  "author": "Brian Wu <brian@enreach.network>",
+  "repository": "https://github.com/AroNetwork/aro-chain-js-sdk.git",
+  "author": "Brian Wu <brian@aro.network>",
   "licenses": [
     {
       "type": "Apache-2.0",

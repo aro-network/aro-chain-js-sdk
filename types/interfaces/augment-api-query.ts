@@ -9,7 +9,7 @@ import type { ApiTypes, AugmentedQuery, QueryableStorageEntry } from '@polkadot/
 import type { BTreeMap, Bytes, Option, Vec, bool, u128, u32, u64 } from '@polkadot/types-codec';
 import type { AnyNumber, ITuple } from '@polkadot/types-codec/types';
 import type { AccountId32, H256 } from '@polkadot/types/interfaces/runtime';
-import type { EnreachPrimitivesChecker, EnreachPrimitivesCheckerScheduler, EnreachPrimitivesEdgenodeNode, EnreachPrimitivesManager, EnreachPrimitivesManagerOperator, EnreachPrimitivesRegistryRegion, EnreachPrimitivesUser, EnreachPrimitivesWorkloadCheatStatusChangeRequest, EnreachPrimitivesWorkloadCheatStatusProcessData, EnreachPrimitivesWorkloadCheatStatusResult, EnreachPrimitivesWorkloadEpochInfo, EnreachPrimitivesWorkloadEraInfo, EnreachPrimitivesWorkloadManagerCSWorkload, EnreachPrimitivesWorkloadManagerRPWorkload, EnreachPrimitivesWorkloadManagerWRWorkload, EnreachPrimitivesWorkloadNodeWorkload, EnreachPrimitivesWorkloadParamKey, EnreachPrimitivesWorkloadReputationDeltaPoint, EnreachPrimitivesWorkloadReputationPointChangeRequest, EnreachPrimitivesWorkloadReputationPointProcessData, EnreachPrimitivesWorkloadWorkreport, EnreachPrimitivesWorkloadWorkreportProcessData, FrameSupportDispatchPerDispatchClassWeight, FrameSupportTokensMiscIdAmountRuntimeFreezeReason, FrameSupportTokensMiscIdAmountRuntimeHoldReason, FrameSystemAccountInfo, FrameSystemCodeUpgradeAuthorization, FrameSystemEventRecord, FrameSystemLastRuntimeUpgradeInfo, FrameSystemPhase, PalletBalancesAccountData, PalletBalancesBalanceLock, PalletBalancesReserveData, PalletGrandpaStoredPendingChange, PalletGrandpaStoredState, PalletTransactionPaymentReleases, SpConsensusAuraSr25519AppSr25519Public, SpConsensusGrandpaAppPublic, SpRuntimeDigest } from '@polkadot/types/lookup';
+import type { AroPrimitivesChecker, AroPrimitivesCheckerScheduler, AroPrimitivesEdgenodeNode, AroPrimitivesManager, AroPrimitivesManagerOperator, AroPrimitivesRegistryRegion, AroPrimitivesUser, AroPrimitivesWorkloadCheatStatusChangeRequest, AroPrimitivesWorkloadCheatStatusProcessData, AroPrimitivesWorkloadCheatStatusResult, AroPrimitivesWorkloadEpochInfo, AroPrimitivesWorkloadEraInfo, AroPrimitivesWorkloadManagerCSWorkload, AroPrimitivesWorkloadManagerRPWorkload, AroPrimitivesWorkloadManagerWRWorkload, AroPrimitivesWorkloadNodeWorkload, AroPrimitivesWorkloadParamKey, AroPrimitivesWorkloadReputationDeltaPoint, AroPrimitivesWorkloadReputationPointChangeRequest, AroPrimitivesWorkloadReputationPointProcessData, AroPrimitivesWorkloadWorkreport, AroPrimitivesWorkloadWorkreportProcessData, FrameSupportDispatchPerDispatchClassWeight, FrameSupportTokensMiscIdAmountRuntimeFreezeReason, FrameSupportTokensMiscIdAmountRuntimeHoldReason, FrameSystemAccountInfo, FrameSystemCodeUpgradeAuthorization, FrameSystemEventRecord, FrameSystemLastRuntimeUpgradeInfo, FrameSystemPhase, PalletBalancesAccountData, PalletBalancesBalanceLock, PalletBalancesReserveData, PalletGrandpaStoredPendingChange, PalletGrandpaStoredState, PalletTransactionPaymentReleases, SpConsensusAuraSr25519AppSr25519Public, SpConsensusGrandpaAppPublic, SpRuntimeDigest } from '@polkadot/types/lookup';
 import type { Observable } from '@polkadot/types/types';
 
 export type __AugmentedQuery<ApiType extends ApiTypes> = AugmentedQuery<ApiType, () => unknown>;
@@ -96,8 +96,8 @@ declare module '@polkadot/api-base/types/storage' {
       [key: string]: QueryableStorageEntry<ApiType>;
     };
     checker: {
-      checkers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesChecker>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
-      schedulerDB: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesCheckerScheduler>>, []> & QueryableStorageEntry<ApiType, []>;
+      checkers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesChecker>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      schedulerDB: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesCheckerScheduler>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Storage items for this pallet.
        **/
@@ -111,7 +111,7 @@ declare module '@polkadot/api-base/types/storage' {
       /**
        * Storage items for this pallet.
        **/
-      nodes: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesEdgenodeNode>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      nodes: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesEdgenodeNode>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -166,8 +166,8 @@ declare module '@polkadot/api-base/types/storage' {
       /**
        * Storage items for this pallet.
        **/
-      managers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesManager>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
-      operators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesManagerOperator>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      managers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesManager>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      operators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesManagerOperator>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -178,7 +178,7 @@ declare module '@polkadot/api-base/types/storage' {
       /**
        * Storage items for this pallet.
        **/
-      regions: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesRegistryRegion>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      regions: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesRegistryRegion>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -319,50 +319,50 @@ declare module '@polkadot/api-base/types/storage' {
       /**
        * Storage items for this pallet.
        **/
-      users: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesUser>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      users: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesUser>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
       /**
        * Generic query
        **/
       [key: string]: QueryableStorageEntry<ApiType>;
     };
     workload: {
-      cheatStatusChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, EnreachPrimitivesWorkloadCheatStatusChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      cheatStatusChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadCheatStatusChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       cheatStatusChangeRequestsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      cheatStatusProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadCheatStatusProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
+      cheatStatusProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadCheatStatusProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       cheatStatusProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
-      cheatStatusResults: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadCheatStatusResult>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      cheatStatusResults: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadCheatStatusResult>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       cheatStatusResultsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      currentEpoch: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadEpochInfo>>, []> & QueryableStorageEntry<ApiType, []>;
-      currentEra: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadEraInfo>>, []> & QueryableStorageEntry<ApiType, []>;
-      historyEpochs: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadEpochInfo>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      historyEras: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadEraInfo>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      lastCheatStatusProcessData: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadCheatStatusProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
-      lastReputationPointProcessData: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadReputationPointProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
-      lastWorkreportProcessData: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadWorkreportProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
-      managerCSWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadManagerCSWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
+      currentEpoch: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadEpochInfo>>, []> & QueryableStorageEntry<ApiType, []>;
+      currentEra: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadEraInfo>>, []> & QueryableStorageEntry<ApiType, []>;
+      historyEpochs: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadEpochInfo>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
+      historyEras: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadEraInfo>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
+      lastCheatStatusProcessData: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadCheatStatusProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
+      lastReputationPointProcessData: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadReputationPointProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
+      lastWorkreportProcessData: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadWorkreportProcessData>>, []> & QueryableStorageEntry<ApiType, []>;
+      managerCSWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadManagerCSWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
       managerCSWorkloadsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      managerRPWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadManagerRPWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
+      managerRPWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadManagerRPWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
       managerRPWorkloadsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      managerWRWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadManagerWRWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
+      managerWRWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadManagerWRWorkload>>, [u64, AccountId32]> & QueryableStorageEntry<ApiType, [u64, AccountId32]>;
       managerWRWorkloadsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      nodeWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadNodeWorkload>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      nodeWorkloads: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadNodeWorkload>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       nodeWorkloadsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      params: AugmentedQuery<ApiType, (arg: EnreachPrimitivesWorkloadParamKey | 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth' | number | Uint8Array) => Observable<u32>, [EnreachPrimitivesWorkloadParamKey]> & QueryableStorageEntry<ApiType, [EnreachPrimitivesWorkloadParamKey]>;
-      pendingNextEpoch: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadEpochInfo>>, []> & QueryableStorageEntry<ApiType, []>;
-      pendingNextEra: AugmentedQuery<ApiType, () => Observable<Option<EnreachPrimitivesWorkloadEraInfo>>, []> & QueryableStorageEntry<ApiType, []>;
-      reputationDeltaPoints: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadReputationDeltaPoint>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      params: AugmentedQuery<ApiType, (arg: AroPrimitivesWorkloadParamKey | 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth' | number | Uint8Array) => Observable<u32>, [AroPrimitivesWorkloadParamKey]> & QueryableStorageEntry<ApiType, [AroPrimitivesWorkloadParamKey]>;
+      pendingNextEpoch: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadEpochInfo>>, []> & QueryableStorageEntry<ApiType, []>;
+      pendingNextEra: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadEraInfo>>, []> & QueryableStorageEntry<ApiType, []>;
+      reputationDeltaPoints: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadReputationDeltaPoint>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       reputationDeltaPointsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      reputationPointChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, EnreachPrimitivesWorkloadReputationPointChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      reputationPointChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadReputationPointChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       reputationPointChangeRequestsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      reputationPointsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadReputationPointProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
+      reputationPointsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadReputationPointProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       reputationPointsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Storage items for this pallet.
        **/
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
-      workreports: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, EnreachPrimitivesWorkloadWorkreport>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
+      workreports: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadWorkreport>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       workreportsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      workreportsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<EnreachPrimitivesWorkloadWorkreportProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
+      workreportsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadWorkreportProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       workreportsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query

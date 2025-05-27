@@ -368,8 +368,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'Sudid' | 'KeyChanged' | 'KeyRemoved' | 'SudoAsDone';
   }
 
-  /** @name EnreachPalletRegistryEvent (43) */
-  interface EnreachPalletRegistryEvent extends Enum {
+  /** @name AroPalletRegistryEvent (43) */
+  interface AroPalletRegistryEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isRegionCreated: boolean;
@@ -393,8 +393,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorSet' | 'RegionCreated' | 'RegionUpdated' | 'RegionDeleted';
   }
 
-  /** @name EnreachPalletUserEvent (44) */
-  interface EnreachPalletUserEvent extends Enum {
+  /** @name AroPalletUserEvent (44) */
+  interface AroPalletUserEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isUserCreated: boolean;
@@ -413,8 +413,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorSet' | 'UserCreated' | 'UserEvmBound';
   }
 
-  /** @name EnreachPalletEdgenodeEvent (47) */
-  interface EnreachPalletEdgenodeEvent extends Enum {
+  /** @name AroPalletEdgenodeEvent (47) */
+  interface AroPalletEdgenodeEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isNodeRegistered: boolean;
@@ -448,8 +448,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorSet' | 'NodeRegistered' | 'NodeBound' | 'NodeUnbound' | 'TrafficTypeUpdated';
   }
 
-  /** @name EnreachPalletManagerEvent (48) */
-  interface EnreachPalletManagerEvent extends Enum {
+  /** @name AroPalletManagerEvent (48) */
+  interface AroPalletManagerEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isManagerRegistered: boolean;
@@ -466,7 +466,7 @@ declare module '@polkadot/types/lookup' {
     readonly isManagerGoWorking: boolean;
     readonly asManagerGoWorking: {
       readonly manager: AccountId32;
-      readonly status: EnreachPrimitivesManagerManagerWorkingStatus;
+      readonly status: AroPrimitivesManagerManagerWorkingStatus;
       readonly updateAt: u64;
     } & Struct;
     readonly isOperatorCreated: boolean;
@@ -522,21 +522,21 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorSet' | 'ManagerRegistered' | 'ManagerGoWorking' | 'OperatorCreated' | 'OperatorManagerBound' | 'ManagerRegionSet' | 'ManagerConnParamsUpdated' | 'ManagerActivated' | 'OperatorEVMAccountBound' | 'OperatorBasicInfoUpdated';
   }
 
-  /** @name EnreachPrimitivesManagerManagerWorkingStatus (50) */
-  interface EnreachPrimitivesManagerManagerWorkingStatus extends Enum {
+  /** @name AroPrimitivesManagerManagerWorkingStatus (50) */
+  interface AroPrimitivesManagerManagerWorkingStatus extends Enum {
     readonly isWsWorking: boolean;
     readonly isWsOffline: boolean;
     readonly isWsBlock: boolean;
     readonly type: 'WsWorking' | 'WsOffline' | 'WsBlock';
   }
 
-  /** @name EnreachPalletWorkloadEvent (51) */
-  interface EnreachPalletWorkloadEvent extends Enum {
+  /** @name AroPalletWorkloadEvent (51) */
+  interface AroPalletWorkloadEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isParamUpdated: boolean;
     readonly asParamUpdated: {
-      readonly key: EnreachPrimitivesWorkloadParamKey;
+      readonly key: AroPrimitivesWorkloadParamKey;
       readonly oldValue: u32;
       readonly newValue: u32;
       readonly updator: AccountId32;
@@ -638,8 +638,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorSet' | 'ParamUpdated' | 'WorkreportsSubmitted' | 'ReputationPointChangeRequestsSubmitted' | 'CheatStatusChangeRequestsSubmitted' | 'EpochStarted' | 'EpochEnded' | 'EraStarted' | 'EraEnded' | 'WorkreportsProcessStarted' | 'WorkreportsProcessEnded' | 'ReputationPointsProcessStarted' | 'ReputationPointsProcessEnded' | 'CheatStatusProcessStarted' | 'CheatStatusProcessEnded';
   }
 
-  /** @name EnreachPrimitivesWorkloadParamKey (52) */
-  interface EnreachPrimitivesWorkloadParamKey extends Enum {
+  /** @name AroPrimitivesWorkloadParamKey (52) */
+  interface AroPrimitivesWorkloadParamKey extends Enum {
     readonly isEpochLength: boolean;
     readonly isEraLength: boolean;
     readonly isWorkreportProcessBatchSize: boolean;
@@ -650,8 +650,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth';
   }
 
-  /** @name EnreachPalletCheckerEvent (53) */
-  interface EnreachPalletCheckerEvent extends Enum {
+  /** @name AroPalletCheckerEvent (53) */
+  interface AroPalletCheckerEvent extends Enum {
     readonly isSuperiorSet: boolean;
     readonly asSuperiorSet: AccountId32;
     readonly isCheckerRegistered: boolean;
@@ -968,21 +968,21 @@ declare module '@polkadot/types/lookup' {
 
   /** @name FrameSupportTokensMiscIdAmountRuntimeHoldReason (111) */
   interface FrameSupportTokensMiscIdAmountRuntimeHoldReason extends Struct {
-    readonly id: EnreachRuntimeRuntimeHoldReason;
+    readonly id: AroRuntimeRuntimeHoldReason;
     readonly amount: u128;
   }
 
-  /** @name EnreachRuntimeRuntimeHoldReason (112) */
-  type EnreachRuntimeRuntimeHoldReason = Null;
+  /** @name AroRuntimeRuntimeHoldReason (112) */
+  type AroRuntimeRuntimeHoldReason = Null;
 
   /** @name FrameSupportTokensMiscIdAmountRuntimeFreezeReason (115) */
   interface FrameSupportTokensMiscIdAmountRuntimeFreezeReason extends Struct {
-    readonly id: EnreachRuntimeRuntimeFreezeReason;
+    readonly id: AroRuntimeRuntimeFreezeReason;
     readonly amount: u128;
   }
 
-  /** @name EnreachRuntimeRuntimeFreezeReason (116) */
-  type EnreachRuntimeRuntimeFreezeReason = Null;
+  /** @name AroRuntimeRuntimeFreezeReason (116) */
+  type AroRuntimeRuntimeFreezeReason = Null;
 
   /** @name PalletBalancesCall (118) */
   interface PalletBalancesCall extends Enum {
@@ -1089,8 +1089,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'Sudo' | 'SudoUncheckedWeight' | 'SetKey' | 'SudoAs' | 'RemoveKey';
   }
 
-  /** @name EnreachPalletRegistryCall (129) */
-  interface EnreachPalletRegistryCall extends Enum {
+  /** @name AroPalletRegistryCall (129) */
+  interface AroPalletRegistryCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
@@ -1114,8 +1114,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SetSuperior' | 'CreateRegion' | 'UpdateRegion' | 'DeleteRegion';
   }
 
-  /** @name EnreachPalletUserCall (130) */
-  interface EnreachPalletUserCall extends Enum {
+  /** @name AroPalletUserCall (130) */
+  interface AroPalletUserCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
@@ -1133,8 +1133,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SetSuperior' | 'CreateUser' | 'BindEvmAccount';
   }
 
-  /** @name EnreachPalletEdgenodeCall (132) */
-  interface EnreachPalletEdgenodeCall extends Enum {
+  /** @name AroPalletEdgenodeCall (132) */
+  interface AroPalletEdgenodeCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
@@ -1165,8 +1165,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SetSuperior' | 'RegisterNode' | 'BindNode' | 'UnbindNode' | 'BatchUpdateTrafficType';
   }
 
-  /** @name EnreachPalletManagerCall (133) */
-  interface EnreachPalletManagerCall extends Enum {
+  /** @name AroPalletManagerCall (133) */
+  interface AroPalletManagerCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
@@ -1222,15 +1222,15 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SetSuperior' | 'RegisterManager' | 'GoWorking' | 'CreateOperator' | 'BindManager' | 'SetManagerRegion' | 'UpdateManagerConnParams' | 'ActivateManager' | 'BindOperatorEvmAccount' | 'UpdateOperatorBasicInfo';
   }
 
-  /** @name EnreachPalletWorkloadCall (134) */
-  interface EnreachPalletWorkloadCall extends Enum {
+  /** @name AroPalletWorkloadCall (134) */
+  interface AroPalletWorkloadCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
     } & Struct;
     readonly isUpdateParam: boolean;
     readonly asUpdateParam: {
-      readonly key: EnreachPrimitivesWorkloadParamKey;
+      readonly key: AroPrimitivesWorkloadParamKey;
       readonly value: u32;
     } & Struct;
     readonly isSubmitWorkreports: boolean;
@@ -1246,21 +1246,21 @@ declare module '@polkadot/types/lookup' {
     readonly isSubmitCheatStatus: boolean;
     readonly asSubmitCheatStatus: {
       readonly era: u64;
-      readonly nodeDatas: Vec<ITuple<[Bytes, EnreachPrimitivesEdgenodeCheatStatus]>>;
+      readonly nodeDatas: Vec<ITuple<[Bytes, AroPrimitivesEdgenodeCheatStatus]>>;
     } & Struct;
     readonly type: 'SetSuperior' | 'UpdateParam' | 'SubmitWorkreports' | 'SubmitReputationPoints' | 'SubmitCheatStatus';
   }
 
-  /** @name EnreachPrimitivesEdgenodeCheatStatus (142) */
-  interface EnreachPrimitivesEdgenodeCheatStatus extends Enum {
+  /** @name AroPrimitivesEdgenodeCheatStatus (142) */
+  interface AroPrimitivesEdgenodeCheatStatus extends Enum {
     readonly isCsNormal: boolean;
     readonly isCsSuspicious: boolean;
     readonly isCsBlacklist: boolean;
     readonly type: 'CsNormal' | 'CsSuspicious' | 'CsBlacklist';
   }
 
-  /** @name EnreachPalletCheckerCall (143) */
-  interface EnreachPalletCheckerCall extends Enum {
+  /** @name AroPalletCheckerCall (143) */
+  interface AroPalletCheckerCall extends Enum {
     readonly isSetSuperior: boolean;
     readonly asSetSuperior: {
       readonly newSuperior: AccountId32;
@@ -1303,8 +1303,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'RequireSudo';
   }
 
-  /** @name EnreachPrimitivesRegistryRegion (147) */
-  interface EnreachPrimitivesRegistryRegion extends Struct {
+  /** @name AroPrimitivesRegistryRegion (147) */
+  interface AroPrimitivesRegistryRegion extends Struct {
     readonly code: Bytes;
     readonly name: Bytes;
     readonly description: Bytes;
@@ -1314,8 +1314,8 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPalletRegistryError (150) */
-  interface EnreachPalletRegistryError extends Enum {
+  /** @name AroPalletRegistryError (150) */
+  interface AroPalletRegistryError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isRegionExists: boolean;
@@ -1326,8 +1326,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'RegionExists' | 'RegionNotFound' | 'RegionCodeExceedMaxLength' | 'RegionNameExceedMaxLength' | 'RegionDescExceedMaxLength';
   }
 
-  /** @name EnreachPrimitivesUser (152) */
-  interface EnreachPrimitivesUser extends Struct {
+  /** @name AroPrimitivesUser (152) */
+  interface AroPrimitivesUser extends Struct {
     readonly userId: Bytes;
     readonly evmAccount: Option<H160>;
     readonly creator: AccountId32;
@@ -1336,8 +1336,8 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPalletUserError (154) */
-  interface EnreachPalletUserError extends Enum {
+  /** @name AroPalletUserError (154) */
+  interface AroPalletUserError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isUserExists: boolean;
@@ -1349,16 +1349,16 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'UserExists' | 'UserNotFound' | 'UserIdExceedMaxLength' | 'InvalidUserId' | 'InvalidEvmAddress' | 'InvalidSignature';
   }
 
-  /** @name EnreachPrimitivesEdgenodeNode (155) */
-  interface EnreachPrimitivesEdgenodeNode extends Struct {
+  /** @name AroPrimitivesEdgenodeNode (155) */
+  interface AroPrimitivesEdgenodeNode extends Struct {
     readonly nodeId: Bytes;
     readonly nodePubkey: Bytes;
     readonly userId: Bytes;
     readonly deviceType: Bytes;
     readonly regionCode: Bytes;
     readonly trafficType: u32;
-    readonly registerStatus: EnreachPrimitivesEdgenodeNodeRegisterStatus;
-    readonly cheatStatus: EnreachPrimitivesEdgenodeCheatStatus;
+    readonly registerStatus: AroPrimitivesEdgenodeNodeRegisterStatus;
+    readonly cheatStatus: AroPrimitivesEdgenodeCheatStatus;
     readonly reputationPoint: i64;
     readonly creator: AccountId32;
     readonly createAt: u64;
@@ -1366,16 +1366,16 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesEdgenodeNodeRegisterStatus (157) */
-  interface EnreachPrimitivesEdgenodeNodeRegisterStatus extends Enum {
+  /** @name AroPrimitivesEdgenodeNodeRegisterStatus (157) */
+  interface AroPrimitivesEdgenodeNodeRegisterStatus extends Enum {
     readonly isRsPendingBind: boolean;
     readonly isRsPendingActivate: boolean;
     readonly isRsActivate: boolean;
     readonly type: 'RsPendingBind' | 'RsPendingActivate' | 'RsActivate';
   }
 
-  /** @name EnreachPalletEdgenodeError (158) */
-  interface EnreachPalletEdgenodeError extends Enum {
+  /** @name AroPalletEdgenodeError (158) */
+  interface AroPalletEdgenodeError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isNodeAlreadyExists: boolean;
@@ -1394,8 +1394,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'NodeAlreadyExists' | 'NodeNotFound' | 'UserNotFound' | 'RegionNotFound' | 'NodeAlreadyBound' | 'NodeNotBoundYet' | 'UserIdNotMatch' | 'BatchLimitExceeded' | 'NodeIdExceedMaxLength' | 'NodePubkeyExceedMaxLength' | 'DeviceTypeExceedMaxLength' | 'UserIdExceedMaxLength' | 'RegionCodeExceedMaxLength';
   }
 
-  /** @name EnreachPrimitivesManager (159) */
-  interface EnreachPrimitivesManager extends Struct {
+  /** @name AroPrimitivesManager (159) */
+  interface AroPrimitivesManager extends Struct {
     readonly managerAccount: AccountId32;
     readonly operatorAccount: Option<AccountId32>;
     readonly hostAddress: Bytes;
@@ -1404,16 +1404,16 @@ declare module '@polkadot/types/lookup' {
     readonly chainApiPort: u16;
     readonly chainRpcPort: u16;
     readonly regionCode: Bytes;
-    readonly registerStatus: EnreachPrimitivesManagerManagerRegisterStatus;
-    readonly workingStatus: EnreachPrimitivesManagerManagerWorkingStatus;
+    readonly registerStatus: AroPrimitivesManagerManagerRegisterStatus;
+    readonly workingStatus: AroPrimitivesManagerManagerWorkingStatus;
     readonly creator: AccountId32;
     readonly createAt: u64;
     readonly updator: AccountId32;
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesManagerManagerRegisterStatus (161) */
-  interface EnreachPrimitivesManagerManagerRegisterStatus extends Enum {
+  /** @name AroPrimitivesManagerManagerRegisterStatus (161) */
+  interface AroPrimitivesManagerManagerRegisterStatus extends Enum {
     readonly isRsPendingBind: boolean;
     readonly isRsPendingConfig: boolean;
     readonly isRsPendingActivate: boolean;
@@ -1421,8 +1421,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'RsPendingBind' | 'RsPendingConfig' | 'RsPendingActivate' | 'RsActivate';
   }
 
-  /** @name EnreachPrimitivesManagerOperator (162) */
-  interface EnreachPrimitivesManagerOperator extends Struct {
+  /** @name AroPrimitivesManagerOperator (162) */
+  interface AroPrimitivesManagerOperator extends Struct {
     readonly operatorAccount: AccountId32;
     readonly managerAccount: Option<AccountId32>;
     readonly evmAccount: Option<H160>;
@@ -1435,8 +1435,8 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPalletManagerError (164) */
-  interface EnreachPalletManagerError extends Enum {
+  /** @name AroPalletManagerError (164) */
+  interface AroPalletManagerError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isManagerAlreadyExists: boolean;
@@ -1469,8 +1469,8 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'ManagerAlreadyExists' | 'ManagerNotFound' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'NotActivated' | 'NoOperatorBound' | 'InvalidConnectionParams' | 'RegionNotSet' | 'OperatorAlreadyExists' | 'OperatorNameExceedMaxLength' | 'OperatorDescExceedMaxLength' | 'OperatorUrlExceedMaxLength' | 'OperatorNotFound' | 'OperatorAndManagerAccountDuplicate' | 'ManagerAlreadyBind' | 'OperatorAndManagerAlreadyBind' | 'OperatorAlreadyBindToOtherManager' | 'ManagerNotBind' | 'ManagerRegionNotAllowedToChange' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'InvalidManagerRegisterStatus' | 'ManagerConfigNotDone' | 'ManagerAlreadyActivate' | 'UnknownManagerRegisterStatus' | 'InvalidManagerSignature';
   }
 
-  /** @name EnreachPrimitivesWorkloadEpochInfo (165) */
-  interface EnreachPrimitivesWorkloadEpochInfo extends Struct {
+  /** @name AroPrimitivesWorkloadEpochInfo (165) */
+  interface AroPrimitivesWorkloadEpochInfo extends Struct {
     readonly number: u64;
     readonly startTime: u64;
     readonly startBlock: u64;
@@ -1478,8 +1478,8 @@ declare module '@polkadot/types/lookup' {
     readonly endBlock: Option<u64>;
   }
 
-  /** @name EnreachPrimitivesWorkloadEraInfo (166) */
-  interface EnreachPrimitivesWorkloadEraInfo extends Struct {
+  /** @name AroPrimitivesWorkloadEraInfo (166) */
+  interface AroPrimitivesWorkloadEraInfo extends Struct {
     readonly number: u64;
     readonly startTime: u64;
     readonly startBlock: u64;
@@ -1487,21 +1487,21 @@ declare module '@polkadot/types/lookup' {
     readonly endBlock: Option<u64>;
   }
 
-  /** @name EnreachPrimitivesWorkloadWorkreport (169) */
-  interface EnreachPrimitivesWorkloadWorkreport extends Struct {
+  /** @name AroPrimitivesWorkloadWorkreport (169) */
+  interface AroPrimitivesWorkloadWorkreport extends Struct {
     readonly score: u64;
     readonly createAt: u64;
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadNodeWorkload (173) */
-  interface EnreachPrimitivesWorkloadNodeWorkload extends Struct {
+  /** @name AroPrimitivesWorkloadNodeWorkload (173) */
+  interface AroPrimitivesWorkloadNodeWorkload extends Struct {
     readonly score: u64;
     readonly createAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadManagerWRWorkload (175) */
-  interface EnreachPrimitivesWorkloadManagerWRWorkload extends Struct {
+  /** @name AroPrimitivesWorkloadManagerWRWorkload (175) */
+  interface AroPrimitivesWorkloadManagerWRWorkload extends Struct {
     readonly epoch: u64;
     readonly managerAccount: AccountId32;
     readonly reportedNodesCount: u64;
@@ -1510,40 +1510,40 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadWorkreportProcessData (176) */
-  interface EnreachPrimitivesWorkloadWorkreportProcessData extends Struct {
+  /** @name AroPrimitivesWorkloadWorkreportProcessData (176) */
+  interface AroPrimitivesWorkloadWorkreportProcessData extends Struct {
     readonly epoch: u64;
     readonly totalNodesCount: u64;
     readonly processedNodesCount: u64;
     readonly startAt: u64;
     readonly updateAt: u64;
-    readonly status: EnreachPrimitivesWorkloadProcessStatus;
+    readonly status: AroPrimitivesWorkloadProcessStatus;
     readonly pageNextKey: Option<Bytes>;
   }
 
-  /** @name EnreachPrimitivesWorkloadProcessStatus (177) */
-  interface EnreachPrimitivesWorkloadProcessStatus extends Enum {
+  /** @name AroPrimitivesWorkloadProcessStatus (177) */
+  interface AroPrimitivesWorkloadProcessStatus extends Enum {
     readonly isInit: boolean;
     readonly isProcessing: boolean;
     readonly isDone: boolean;
     readonly type: 'Init' | 'Processing' | 'Done';
   }
 
-  /** @name EnreachPrimitivesWorkloadReputationPointChangeRequest (180) */
-  interface EnreachPrimitivesWorkloadReputationPointChangeRequest extends Struct {
+  /** @name AroPrimitivesWorkloadReputationPointChangeRequest (180) */
+  interface AroPrimitivesWorkloadReputationPointChangeRequest extends Struct {
     readonly deltaPoint: i64;
     readonly createAt: u64;
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadReputationDeltaPoint (184) */
-  interface EnreachPrimitivesWorkloadReputationDeltaPoint extends Struct {
+  /** @name AroPrimitivesWorkloadReputationDeltaPoint (184) */
+  interface AroPrimitivesWorkloadReputationDeltaPoint extends Struct {
     readonly deltaPoint: i64;
     readonly createAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadManagerRPWorkload (185) */
-  interface EnreachPrimitivesWorkloadManagerRPWorkload extends Struct {
+  /** @name AroPrimitivesWorkloadManagerRPWorkload (185) */
+  interface AroPrimitivesWorkloadManagerRPWorkload extends Struct {
     readonly era: u64;
     readonly managerAccount: AccountId32;
     readonly reportedNodesCount: u64;
@@ -1552,32 +1552,32 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadReputationPointProcessData (186) */
-  interface EnreachPrimitivesWorkloadReputationPointProcessData extends Struct {
+  /** @name AroPrimitivesWorkloadReputationPointProcessData (186) */
+  interface AroPrimitivesWorkloadReputationPointProcessData extends Struct {
     readonly era: u64;
     readonly totalNodesCount: u64;
     readonly processedNodesCount: u64;
     readonly startAt: u64;
     readonly updateAt: u64;
-    readonly status: EnreachPrimitivesWorkloadProcessStatus;
+    readonly status: AroPrimitivesWorkloadProcessStatus;
     readonly pageNextKey: Option<Bytes>;
   }
 
-  /** @name EnreachPrimitivesWorkloadCheatStatusChangeRequest (188) */
-  interface EnreachPrimitivesWorkloadCheatStatusChangeRequest extends Struct {
-    readonly cheatStatus: EnreachPrimitivesEdgenodeCheatStatus;
+  /** @name AroPrimitivesWorkloadCheatStatusChangeRequest (188) */
+  interface AroPrimitivesWorkloadCheatStatusChangeRequest extends Struct {
+    readonly cheatStatus: AroPrimitivesEdgenodeCheatStatus;
     readonly createAt: u64;
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadCheatStatusResult (192) */
-  interface EnreachPrimitivesWorkloadCheatStatusResult extends Struct {
-    readonly cheatStatus: EnreachPrimitivesEdgenodeCheatStatus;
+  /** @name AroPrimitivesWorkloadCheatStatusResult (192) */
+  interface AroPrimitivesWorkloadCheatStatusResult extends Struct {
+    readonly cheatStatus: AroPrimitivesEdgenodeCheatStatus;
     readonly createAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadManagerCSWorkload (193) */
-  interface EnreachPrimitivesWorkloadManagerCSWorkload extends Struct {
+  /** @name AroPrimitivesWorkloadManagerCSWorkload (193) */
+  interface AroPrimitivesWorkloadManagerCSWorkload extends Struct {
     readonly era: u64;
     readonly managerAccount: AccountId32;
     readonly reportedNodesCount: u64;
@@ -1586,19 +1586,19 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesWorkloadCheatStatusProcessData (194) */
-  interface EnreachPrimitivesWorkloadCheatStatusProcessData extends Struct {
+  /** @name AroPrimitivesWorkloadCheatStatusProcessData (194) */
+  interface AroPrimitivesWorkloadCheatStatusProcessData extends Struct {
     readonly era: u64;
     readonly totalNodesCount: u64;
     readonly processedNodesCount: u64;
     readonly startAt: u64;
     readonly updateAt: u64;
-    readonly status: EnreachPrimitivesWorkloadProcessStatus;
+    readonly status: AroPrimitivesWorkloadProcessStatus;
     readonly pageNextKey: Option<Bytes>;
   }
 
-  /** @name EnreachPalletWorkloadError (195) */
-  interface EnreachPalletWorkloadError extends Enum {
+  /** @name AroPalletWorkloadError (195) */
+  interface AroPalletWorkloadError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isInvalidCurrentEpoch: boolean;
@@ -1622,30 +1622,30 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'InvalidCurrentEpoch' | 'InvalidCurrentEra' | 'ManagerNotFound' | 'ManagerNotActivate' | 'ManagerBlocked' | 'GenesisEpochNotAllowed' | 'InvalidSubmitEpoch' | 'ManagerLimitExceeded' | 'NodeScoresCountExceedPerReqLimit' | 'InvalidParamValueRange' | 'EraLengthNotMultipleOfEpochLength' | 'NodePointsCountExceedPerReqLimit' | 'GenesisEraNotAllowed' | 'InvalidSubmitEra' | 'NodeDatasCountExceedPerReqLimit' | 'NoActiveEpoch' | 'NoActiveEra' | 'InvalidPageNextKey';
   }
 
-  /** @name EnreachPrimitivesChecker (196) */
-  interface EnreachPrimitivesChecker extends Struct {
+  /** @name AroPrimitivesChecker (196) */
+  interface AroPrimitivesChecker extends Struct {
     readonly checkerAccount: AccountId32;
     readonly checkerPubkey: U8aFixed;
     readonly regionCode: Bytes;
     readonly hostAddress: Bytes;
     readonly httpPort: u16;
     readonly perfPorts: Vec<u16>;
-    readonly registerStatus: EnreachPrimitivesCheckerCheckerRegisterStatus;
+    readonly registerStatus: AroPrimitivesCheckerCheckerRegisterStatus;
     readonly creator: AccountId32;
     readonly createAt: u64;
     readonly updator: AccountId32;
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPrimitivesCheckerCheckerRegisterStatus (198) */
-  interface EnreachPrimitivesCheckerCheckerRegisterStatus extends Enum {
+  /** @name AroPrimitivesCheckerCheckerRegisterStatus (198) */
+  interface AroPrimitivesCheckerCheckerRegisterStatus extends Enum {
     readonly isRsPendingActivate: boolean;
     readonly isRsActivate: boolean;
     readonly type: 'RsPendingActivate' | 'RsActivate';
   }
 
-  /** @name EnreachPrimitivesCheckerScheduler (199) */
-  interface EnreachPrimitivesCheckerScheduler extends Struct {
+  /** @name AroPrimitivesCheckerScheduler (199) */
+  interface AroPrimitivesCheckerScheduler extends Struct {
     readonly schedulerAccount: AccountId32;
     readonly schedulerPubkey: U8aFixed;
     readonly hostAddress: Bytes;
@@ -1656,8 +1656,8 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name EnreachPalletCheckerError (200) */
-  interface EnreachPalletCheckerError extends Enum {
+  /** @name AroPalletCheckerError (200) */
+  interface AroPalletCheckerError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
     readonly isInvalidHostAddress: boolean;
@@ -1719,7 +1719,7 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'Disabled' | 'Enabled';
   }
 
-  /** @name EnreachRuntimeRuntime (216) */
-  type EnreachRuntimeRuntime = Null;
+  /** @name AroRuntimeRuntime (216) */
+  type AroRuntimeRuntime = Null;
 
 } // declare module

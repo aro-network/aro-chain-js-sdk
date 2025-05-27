@@ -9,7 +9,7 @@ import type { ApiTypes, AugmentedSubmittable, SubmittableExtrinsic, SubmittableE
 import type { Bytes, Compact, U8aFixed, Vec, bool, i64, u128, u16, u32, u64 } from '@polkadot/types-codec';
 import type { AnyNumber, IMethod, ITuple } from '@polkadot/types-codec/types';
 import type { AccountId32, Call, H160, H256, MultiAddress } from '@polkadot/types/interfaces/runtime';
-import type { EnreachPrimitivesEdgenodeCheatStatus, EnreachPrimitivesWorkloadParamKey, PalletBalancesAdjustmentDirection, SpConsensusGrandpaEquivocationProof, SpCoreVoid, SpWeightsWeightV2Weight } from '@polkadot/types/lookup';
+import type { AroPrimitivesEdgenodeCheatStatus, AroPrimitivesWorkloadParamKey, PalletBalancesAdjustmentDirection, SpConsensusGrandpaEquivocationProof, SpCoreVoid, SpWeightsWeightV2Weight } from '@polkadot/types/lookup';
 
 export type __AugmentedSubmittable = AugmentedSubmittable<() => unknown>;
 export type __SubmittableExtrinsic<ApiType extends ApiTypes> = SubmittableExtrinsic<ApiType>;
@@ -346,10 +346,10 @@ declare module '@polkadot/api-base/types/submittable' {
     };
     workload: {
       setSuperior: AugmentedSubmittable<(newSuperior: AccountId32 | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32]>;
-      submitCheatStatus: AugmentedSubmittable<(era: u64 | AnyNumber | Uint8Array, nodeDatas: Vec<ITuple<[Bytes, EnreachPrimitivesEdgenodeCheatStatus]>> | ([Bytes | string | Uint8Array, EnreachPrimitivesEdgenodeCheatStatus | 'CsNormal' | 'CsSuspicious' | 'CsBlacklist' | number | Uint8Array])[]) => SubmittableExtrinsic<ApiType>, [u64, Vec<ITuple<[Bytes, EnreachPrimitivesEdgenodeCheatStatus]>>]>;
+      submitCheatStatus: AugmentedSubmittable<(era: u64 | AnyNumber | Uint8Array, nodeDatas: Vec<ITuple<[Bytes, AroPrimitivesEdgenodeCheatStatus]>> | ([Bytes | string | Uint8Array, AroPrimitivesEdgenodeCheatStatus | 'CsNormal' | 'CsSuspicious' | 'CsBlacklist' | number | Uint8Array])[]) => SubmittableExtrinsic<ApiType>, [u64, Vec<ITuple<[Bytes, AroPrimitivesEdgenodeCheatStatus]>>]>;
       submitReputationPoints: AugmentedSubmittable<(era: u64 | AnyNumber | Uint8Array, nodePoints: Vec<ITuple<[Bytes, i64]>> | ([Bytes | string | Uint8Array, i64 | AnyNumber | Uint8Array])[]) => SubmittableExtrinsic<ApiType>, [u64, Vec<ITuple<[Bytes, i64]>>]>;
       submitWorkreports: AugmentedSubmittable<(epoch: u64 | AnyNumber | Uint8Array, nodeScores: Vec<ITuple<[Bytes, u64]>> | ([Bytes | string | Uint8Array, u64 | AnyNumber | Uint8Array])[]) => SubmittableExtrinsic<ApiType>, [u64, Vec<ITuple<[Bytes, u64]>>]>;
-      updateParam: AugmentedSubmittable<(key: EnreachPrimitivesWorkloadParamKey | 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth' | number | Uint8Array, value: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [EnreachPrimitivesWorkloadParamKey, u32]>;
+      updateParam: AugmentedSubmittable<(key: AroPrimitivesWorkloadParamKey | 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth' | number | Uint8Array, value: u32 | AnyNumber | Uint8Array) => SubmittableExtrinsic<ApiType>, [AroPrimitivesWorkloadParamKey, u32]>;
       /**
        * Generic tx
        **/

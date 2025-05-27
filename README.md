@@ -1,6 +1,6 @@
-# Enreach Chain JS SDK
+# Aro Chain JS SDK
 
-This is the JavaScript SDK for [Enreach Chain](https://github.com/EnreachNetwork/enreach-chain.git).
+This is the JavaScript SDK for [Aro Chain](https://github.com/AroNetwork/aro-chain.git).
 
 ## Usage
 

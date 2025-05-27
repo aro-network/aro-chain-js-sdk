@@ -61,7 +61,7 @@ export default {
     }
   },
   /**
-   * Lookup20: frame_system::EventRecord<enreach_runtime::RuntimeEvent, primitive_types::H256>
+   * Lookup20: frame_system::EventRecord<aro_runtime::RuntimeEvent, primitive_types::H256>
    **/
   FrameSystemEventRecord: {
     phase: 'FrameSystemPhase',
@@ -327,9 +327,9 @@ export default {
     }
   },
   /**
-   * Lookup43: enreach_pallet_registry::pallet::Event<T>
+   * Lookup43: aro_pallet_registry::pallet::Event<T>
    **/
-  EnreachPalletRegistryEvent: {
+  AroPalletRegistryEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       RegionCreated: {
@@ -350,9 +350,9 @@ export default {
     }
   },
   /**
-   * Lookup44: enreach_pallet_user::pallet::Event<T>
+   * Lookup44: aro_pallet_user::pallet::Event<T>
    **/
-  EnreachPalletUserEvent: {
+  AroPalletUserEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       UserCreated: {
@@ -369,9 +369,9 @@ export default {
     }
   },
   /**
-   * Lookup47: enreach_pallet_edgenode::pallet::Event<T>
+   * Lookup47: aro_pallet_edgenode::pallet::Event<T>
    **/
-  EnreachPalletEdgenodeEvent: {
+  AroPalletEdgenodeEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       NodeRegistered: {
@@ -401,9 +401,9 @@ export default {
     }
   },
   /**
-   * Lookup48: enreach_pallet_manager::pallet::Event<T>
+   * Lookup48: aro_pallet_manager::pallet::Event<T>
    **/
-  EnreachPalletManagerEvent: {
+  AroPalletManagerEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       ManagerRegistered: {
@@ -418,7 +418,7 @@ export default {
       },
       ManagerGoWorking: {
         manager: 'AccountId32',
-        status: 'EnreachPrimitivesManagerManagerWorkingStatus',
+        status: 'AroPrimitivesManagerManagerWorkingStatus',
         updateAt: 'u64',
       },
       OperatorCreated: {
@@ -467,19 +467,19 @@ export default {
     }
   },
   /**
-   * Lookup50: enreach_primitives::types::manager::ManagerWorkingStatus
+   * Lookup50: aro_primitives::types::manager::ManagerWorkingStatus
    **/
-  EnreachPrimitivesManagerManagerWorkingStatus: {
+  AroPrimitivesManagerManagerWorkingStatus: {
     _enum: ['WsWorking', 'WsOffline', 'WsBlock']
   },
   /**
-   * Lookup51: enreach_pallet_workload::pallet::Event<T>
+   * Lookup51: aro_pallet_workload::pallet::Event<T>
    **/
-  EnreachPalletWorkloadEvent: {
+  AroPalletWorkloadEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       ParamUpdated: {
-        key: 'EnreachPrimitivesWorkloadParamKey',
+        key: 'AroPrimitivesWorkloadParamKey',
         oldValue: 'u32',
         newValue: 'u32',
         updator: 'AccountId32',
@@ -568,15 +568,15 @@ export default {
     }
   },
   /**
-   * Lookup52: enreach_primitives::types::workload::ParamKey
+   * Lookup52: aro_primitives::types::workload::ParamKey
    **/
-  EnreachPrimitivesWorkloadParamKey: {
+  AroPrimitivesWorkloadParamKey: {
     _enum: ['EpochLength', 'EraLength', 'WorkreportProcessBatchSize', 'ReputationPointProcessBatchSize', 'CheatStatusProcessBatchSize', 'HistoryEpochDataDepth', 'HistoryEraDataDepth']
   },
   /**
-   * Lookup53: enreach_pallet_checker::pallet::Event<T>
+   * Lookup53: aro_pallet_checker::pallet::Event<T>
    **/
-  EnreachPalletCheckerEvent: {
+  AroPalletCheckerEvent: {
     _enum: {
       SuperiorSet: 'AccountId32',
       CheckerRegistered: {
@@ -886,27 +886,27 @@ export default {
     amount: 'u128'
   },
   /**
-   * Lookup111: frame_support::traits::tokens::misc::IdAmount<enreach_runtime::RuntimeHoldReason, Balance>
+   * Lookup111: frame_support::traits::tokens::misc::IdAmount<aro_runtime::RuntimeHoldReason, Balance>
    **/
   FrameSupportTokensMiscIdAmountRuntimeHoldReason: {
-    id: 'EnreachRuntimeRuntimeHoldReason',
+    id: 'AroRuntimeRuntimeHoldReason',
     amount: 'u128'
   },
   /**
-   * Lookup112: enreach_runtime::RuntimeHoldReason
+   * Lookup112: aro_runtime::RuntimeHoldReason
    **/
-  EnreachRuntimeRuntimeHoldReason: 'Null',
+  AroRuntimeRuntimeHoldReason: 'Null',
   /**
-   * Lookup115: frame_support::traits::tokens::misc::IdAmount<enreach_runtime::RuntimeFreezeReason, Balance>
+   * Lookup115: frame_support::traits::tokens::misc::IdAmount<aro_runtime::RuntimeFreezeReason, Balance>
    **/
   FrameSupportTokensMiscIdAmountRuntimeFreezeReason: {
-    id: 'EnreachRuntimeRuntimeFreezeReason',
+    id: 'AroRuntimeRuntimeFreezeReason',
     amount: 'u128'
   },
   /**
-   * Lookup116: enreach_runtime::RuntimeFreezeReason
+   * Lookup116: aro_runtime::RuntimeFreezeReason
    **/
-  EnreachRuntimeRuntimeFreezeReason: 'Null',
+  AroRuntimeRuntimeFreezeReason: 'Null',
   /**
    * Lookup118: pallet_balances::pallet::Call<T, I>
    **/
@@ -996,9 +996,9 @@ export default {
     }
   },
   /**
-   * Lookup129: enreach_pallet_registry::pallet::Call<T>
+   * Lookup129: aro_pallet_registry::pallet::Call<T>
    **/
-  EnreachPalletRegistryCall: {
+  AroPalletRegistryCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
@@ -1019,9 +1019,9 @@ export default {
     }
   },
   /**
-   * Lookup130: enreach_pallet_user::pallet::Call<T>
+   * Lookup130: aro_pallet_user::pallet::Call<T>
    **/
-  EnreachPalletUserCall: {
+  AroPalletUserCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
@@ -1037,9 +1037,9 @@ export default {
     }
   },
   /**
-   * Lookup132: enreach_pallet_edgenode::pallet::Call<T>
+   * Lookup132: aro_pallet_edgenode::pallet::Call<T>
    **/
-  EnreachPalletEdgenodeCall: {
+  AroPalletEdgenodeCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
@@ -1066,9 +1066,9 @@ export default {
     }
   },
   /**
-   * Lookup133: enreach_pallet_manager::pallet::Call<T>
+   * Lookup133: aro_pallet_manager::pallet::Call<T>
    **/
-  EnreachPalletManagerCall: {
+  AroPalletManagerCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
@@ -1116,15 +1116,15 @@ export default {
     }
   },
   /**
-   * Lookup134: enreach_pallet_workload::pallet::Call<T>
+   * Lookup134: aro_pallet_workload::pallet::Call<T>
    **/
-  EnreachPalletWorkloadCall: {
+  AroPalletWorkloadCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
       },
       update_param: {
-        key: 'EnreachPrimitivesWorkloadParamKey',
+        key: 'AroPrimitivesWorkloadParamKey',
         value: 'u32',
       },
       submit_workreports: {
@@ -1137,20 +1137,20 @@ export default {
       },
       submit_cheat_status: {
         era: 'u64',
-        nodeDatas: 'Vec<(Bytes,EnreachPrimitivesEdgenodeCheatStatus)>'
+        nodeDatas: 'Vec<(Bytes,AroPrimitivesEdgenodeCheatStatus)>'
       }
     }
   },
   /**
-   * Lookup142: enreach_primitives::types::edgenode::CheatStatus
+   * Lookup142: aro_primitives::types::edgenode::CheatStatus
    **/
-  EnreachPrimitivesEdgenodeCheatStatus: {
+  AroPrimitivesEdgenodeCheatStatus: {
     _enum: ['CsNormal', 'CsSuspicious', 'CsBlacklist']
   },
   /**
-   * Lookup143: enreach_pallet_checker::pallet::Call<T>
+   * Lookup143: aro_pallet_checker::pallet::Call<T>
    **/
-  EnreachPalletCheckerCall: {
+  AroPalletCheckerCall: {
     _enum: {
       set_superior: {
         newSuperior: 'AccountId32',
@@ -1188,9 +1188,9 @@ export default {
     _enum: ['RequireSudo']
   },
   /**
-   * Lookup147: enreach_primitives::types::registry::Region<sp_core::crypto::AccountId32>
+   * Lookup147: aro_primitives::types::registry::Region<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesRegistryRegion: {
+  AroPrimitivesRegistryRegion: {
     code: 'Bytes',
     name: 'Bytes',
     description: 'Bytes',
@@ -1200,15 +1200,15 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup150: enreach_pallet_registry::pallet::Error<T>
+   * Lookup150: aro_pallet_registry::pallet::Error<T>
    **/
-  EnreachPalletRegistryError: {
+  AroPalletRegistryError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'RegionExists', 'RegionNotFound', 'RegionCodeExceedMaxLength', 'RegionNameExceedMaxLength', 'RegionDescExceedMaxLength']
   },
   /**
-   * Lookup152: enreach_primitives::types::user::User<sp_core::crypto::AccountId32>
+   * Lookup152: aro_primitives::types::user::User<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesUser: {
+  AroPrimitivesUser: {
     userId: 'Bytes',
     evmAccount: 'Option<H160>',
     creator: 'AccountId32',
@@ -1217,23 +1217,23 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup154: enreach_pallet_user::pallet::Error<T>
+   * Lookup154: aro_pallet_user::pallet::Error<T>
    **/
-  EnreachPalletUserError: {
+  AroPalletUserError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'UserExists', 'UserNotFound', 'UserIdExceedMaxLength', 'InvalidUserId', 'InvalidEvmAddress', 'InvalidSignature']
   },
   /**
-   * Lookup155: enreach_primitives::types::edgenode::Node<sp_core::crypto::AccountId32>
+   * Lookup155: aro_primitives::types::edgenode::Node<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesEdgenodeNode: {
+  AroPrimitivesEdgenodeNode: {
     nodeId: 'Bytes',
     nodePubkey: 'Bytes',
     userId: 'Bytes',
     deviceType: 'Bytes',
     regionCode: 'Bytes',
     trafficType: 'u32',
-    registerStatus: 'EnreachPrimitivesEdgenodeNodeRegisterStatus',
-    cheatStatus: 'EnreachPrimitivesEdgenodeCheatStatus',
+    registerStatus: 'AroPrimitivesEdgenodeNodeRegisterStatus',
+    cheatStatus: 'AroPrimitivesEdgenodeCheatStatus',
     reputationPoint: 'i64',
     creator: 'AccountId32',
     createAt: 'u64',
@@ -1241,21 +1241,21 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup157: enreach_primitives::types::edgenode::NodeRegisterStatus
+   * Lookup157: aro_primitives::types::edgenode::NodeRegisterStatus
    **/
-  EnreachPrimitivesEdgenodeNodeRegisterStatus: {
+  AroPrimitivesEdgenodeNodeRegisterStatus: {
     _enum: ['RsPendingBind', 'RsPendingActivate', 'RsActivate']
   },
   /**
-   * Lookup158: enreach_pallet_edgenode::pallet::Error<T>
+   * Lookup158: aro_pallet_edgenode::pallet::Error<T>
    **/
-  EnreachPalletEdgenodeError: {
+  AroPalletEdgenodeError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'NodeAlreadyExists', 'NodeNotFound', 'UserNotFound', 'RegionNotFound', 'NodeAlreadyBound', 'NodeNotBoundYet', 'UserIdNotMatch', 'BatchLimitExceeded', 'NodeIdExceedMaxLength', 'NodePubkeyExceedMaxLength', 'DeviceTypeExceedMaxLength', 'UserIdExceedMaxLength', 'RegionCodeExceedMaxLength']
   },
   /**
-   * Lookup159: enreach_primitives::types::manager::Manager<sp_core::crypto::AccountId32>
+   * Lookup159: aro_primitives::types::manager::Manager<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesManager: {
+  AroPrimitivesManager: {
     managerAccount: 'AccountId32',
     operatorAccount: 'Option<AccountId32>',
     hostAddress: 'Bytes',
@@ -1264,23 +1264,23 @@ export default {
     chainApiPort: 'u16',
     chainRpcPort: 'u16',
     regionCode: 'Bytes',
-    registerStatus: 'EnreachPrimitivesManagerManagerRegisterStatus',
-    workingStatus: 'EnreachPrimitivesManagerManagerWorkingStatus',
+    registerStatus: 'AroPrimitivesManagerManagerRegisterStatus',
+    workingStatus: 'AroPrimitivesManagerManagerWorkingStatus',
     creator: 'AccountId32',
     createAt: 'u64',
     updator: 'AccountId32',
     updateAt: 'u64'
   },
   /**
-   * Lookup161: enreach_primitives::types::manager::ManagerRegisterStatus
+   * Lookup161: aro_primitives::types::manager::ManagerRegisterStatus
    **/
-  EnreachPrimitivesManagerManagerRegisterStatus: {
+  AroPrimitivesManagerManagerRegisterStatus: {
     _enum: ['RsPendingBind', 'RsPendingConfig', 'RsPendingActivate', 'RsActivate']
   },
   /**
-   * Lookup162: enreach_primitives::types::manager::Operator<sp_core::crypto::AccountId32>
+   * Lookup162: aro_primitives::types::manager::Operator<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesManagerOperator: {
+  AroPrimitivesManagerOperator: {
     operatorAccount: 'AccountId32',
     managerAccount: 'Option<AccountId32>',
     evmAccount: 'Option<H160>',
@@ -1293,15 +1293,15 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup164: enreach_pallet_manager::pallet::Error<T>
+   * Lookup164: aro_pallet_manager::pallet::Error<T>
    **/
-  EnreachPalletManagerError: {
+  AroPalletManagerError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'ManagerAlreadyExists', 'ManagerNotFound', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'NotActivated', 'NoOperatorBound', 'InvalidConnectionParams', 'RegionNotSet', 'OperatorAlreadyExists', 'OperatorNameExceedMaxLength', 'OperatorDescExceedMaxLength', 'OperatorUrlExceedMaxLength', 'OperatorNotFound', 'OperatorAndManagerAccountDuplicate', 'ManagerAlreadyBind', 'OperatorAndManagerAlreadyBind', 'OperatorAlreadyBindToOtherManager', 'ManagerNotBind', 'ManagerRegionNotAllowedToChange', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'InvalidManagerRegisterStatus', 'ManagerConfigNotDone', 'ManagerAlreadyActivate', 'UnknownManagerRegisterStatus', 'InvalidManagerSignature']
   },
   /**
-   * Lookup165: enreach_primitives::types::workload::EpochInfo
+   * Lookup165: aro_primitives::types::workload::EpochInfo
    **/
-  EnreachPrimitivesWorkloadEpochInfo: {
+  AroPrimitivesWorkloadEpochInfo: {
     number: 'u64',
     startTime: 'u64',
     startBlock: 'u64',
@@ -1309,9 +1309,9 @@ export default {
     endBlock: 'Option<u64>'
   },
   /**
-   * Lookup166: enreach_primitives::types::workload::EraInfo
+   * Lookup166: aro_primitives::types::workload::EraInfo
    **/
-  EnreachPrimitivesWorkloadEraInfo: {
+  AroPrimitivesWorkloadEraInfo: {
     number: 'u64',
     startTime: 'u64',
     startBlock: 'u64',
@@ -1319,24 +1319,24 @@ export default {
     endBlock: 'Option<u64>'
   },
   /**
-   * Lookup169: enreach_primitives::types::workload::Workreport
+   * Lookup169: aro_primitives::types::workload::Workreport
    **/
-  EnreachPrimitivesWorkloadWorkreport: {
+  AroPrimitivesWorkloadWorkreport: {
     score: 'u64',
     createAt: 'u64',
     updateAt: 'u64'
   },
   /**
-   * Lookup173: enreach_primitives::types::workload::NodeWorkload
+   * Lookup173: aro_primitives::types::workload::NodeWorkload
    **/
-  EnreachPrimitivesWorkloadNodeWorkload: {
+  AroPrimitivesWorkloadNodeWorkload: {
     score: 'u64',
     createAt: 'u64'
   },
   /**
-   * Lookup175: enreach_primitives::types::workload::ManagerWRWorkload<sp_core::crypto::AccountId32>
+   * Lookup175: aro_primitives::types::workload::ManagerWRWorkload<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesWorkloadManagerWRWorkload: {
+  AroPrimitivesWorkloadManagerWRWorkload: {
     epoch: 'u64',
     managerAccount: 'AccountId32',
     reportedNodesCount: 'u64',
@@ -1345,42 +1345,42 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup176: enreach_primitives::types::workload::WorkreportProcessData
+   * Lookup176: aro_primitives::types::workload::WorkreportProcessData
    **/
-  EnreachPrimitivesWorkloadWorkreportProcessData: {
+  AroPrimitivesWorkloadWorkreportProcessData: {
     epoch: 'u64',
     totalNodesCount: 'u64',
     processedNodesCount: 'u64',
     startAt: 'u64',
     updateAt: 'u64',
-    status: 'EnreachPrimitivesWorkloadProcessStatus',
+    status: 'AroPrimitivesWorkloadProcessStatus',
     pageNextKey: 'Option<Bytes>'
   },
   /**
-   * Lookup177: enreach_primitives::types::workload::ProcessStatus
+   * Lookup177: aro_primitives::types::workload::ProcessStatus
    **/
-  EnreachPrimitivesWorkloadProcessStatus: {
+  AroPrimitivesWorkloadProcessStatus: {
     _enum: ['Init', 'Processing', 'Done']
   },
   /**
-   * Lookup180: enreach_primitives::types::workload::ReputationPointChangeRequest
+   * Lookup180: aro_primitives::types::workload::ReputationPointChangeRequest
    **/
-  EnreachPrimitivesWorkloadReputationPointChangeRequest: {
+  AroPrimitivesWorkloadReputationPointChangeRequest: {
     deltaPoint: 'i64',
     createAt: 'u64',
     updateAt: 'u64'
   },
   /**
-   * Lookup184: enreach_primitives::types::workload::ReputationDeltaPoint
+   * Lookup184: aro_primitives::types::workload::ReputationDeltaPoint
    **/
-  EnreachPrimitivesWorkloadReputationDeltaPoint: {
+  AroPrimitivesWorkloadReputationDeltaPoint: {
     deltaPoint: 'i64',
     createAt: 'u64'
   },
   /**
-   * Lookup185: enreach_primitives::types::workload::ManagerRPWorkload<sp_core::crypto::AccountId32>
+   * Lookup185: aro_primitives::types::workload::ManagerRPWorkload<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesWorkloadManagerRPWorkload: {
+  AroPrimitivesWorkloadManagerRPWorkload: {
     era: 'u64',
     managerAccount: 'AccountId32',
     reportedNodesCount: 'u64',
@@ -1389,36 +1389,36 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup186: enreach_primitives::types::workload::ReputationPointProcessData
+   * Lookup186: aro_primitives::types::workload::ReputationPointProcessData
    **/
-  EnreachPrimitivesWorkloadReputationPointProcessData: {
+  AroPrimitivesWorkloadReputationPointProcessData: {
     era: 'u64',
     totalNodesCount: 'u64',
     processedNodesCount: 'u64',
     startAt: 'u64',
     updateAt: 'u64',
-    status: 'EnreachPrimitivesWorkloadProcessStatus',
+    status: 'AroPrimitivesWorkloadProcessStatus',
     pageNextKey: 'Option<Bytes>'
   },
   /**
-   * Lookup188: enreach_primitives::types::workload::CheatStatusChangeRequest
+   * Lookup188: aro_primitives::types::workload::CheatStatusChangeRequest
    **/
-  EnreachPrimitivesWorkloadCheatStatusChangeRequest: {
-    cheatStatus: 'EnreachPrimitivesEdgenodeCheatStatus',
+  AroPrimitivesWorkloadCheatStatusChangeRequest: {
+    cheatStatus: 'AroPrimitivesEdgenodeCheatStatus',
     createAt: 'u64',
     updateAt: 'u64'
   },
   /**
-   * Lookup192: enreach_primitives::types::workload::CheatStatusResult
+   * Lookup192: aro_primitives::types::workload::CheatStatusResult
    **/
-  EnreachPrimitivesWorkloadCheatStatusResult: {
-    cheatStatus: 'EnreachPrimitivesEdgenodeCheatStatus',
+  AroPrimitivesWorkloadCheatStatusResult: {
+    cheatStatus: 'AroPrimitivesEdgenodeCheatStatus',
     createAt: 'u64'
   },
   /**
-   * Lookup193: enreach_primitives::types::workload::ManagerCSWorkload<sp_core::crypto::AccountId32>
+   * Lookup193: aro_primitives::types::workload::ManagerCSWorkload<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesWorkloadManagerCSWorkload: {
+  AroPrimitivesWorkloadManagerCSWorkload: {
     era: 'u64',
     managerAccount: 'AccountId32',
     reportedNodesCount: 'u64',
@@ -1427,49 +1427,49 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup194: enreach_primitives::types::workload::CheatStatusProcessData
+   * Lookup194: aro_primitives::types::workload::CheatStatusProcessData
    **/
-  EnreachPrimitivesWorkloadCheatStatusProcessData: {
+  AroPrimitivesWorkloadCheatStatusProcessData: {
     era: 'u64',
     totalNodesCount: 'u64',
     processedNodesCount: 'u64',
     startAt: 'u64',
     updateAt: 'u64',
-    status: 'EnreachPrimitivesWorkloadProcessStatus',
+    status: 'AroPrimitivesWorkloadProcessStatus',
     pageNextKey: 'Option<Bytes>'
   },
   /**
-   * Lookup195: enreach_pallet_workload::pallet::Error<T>
+   * Lookup195: aro_pallet_workload::pallet::Error<T>
    **/
-  EnreachPalletWorkloadError: {
+  AroPalletWorkloadError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'InvalidCurrentEpoch', 'InvalidCurrentEra', 'ManagerNotFound', 'ManagerNotActivate', 'ManagerBlocked', 'GenesisEpochNotAllowed', 'InvalidSubmitEpoch', 'ManagerLimitExceeded', 'NodeScoresCountExceedPerReqLimit', 'InvalidParamValueRange', 'EraLengthNotMultipleOfEpochLength', 'NodePointsCountExceedPerReqLimit', 'GenesisEraNotAllowed', 'InvalidSubmitEra', 'NodeDatasCountExceedPerReqLimit', 'NoActiveEpoch', 'NoActiveEra', 'InvalidPageNextKey']
   },
   /**
-   * Lookup196: enreach_primitives::types::checker::Checker<sp_core::crypto::AccountId32>
+   * Lookup196: aro_primitives::types::checker::Checker<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesChecker: {
+  AroPrimitivesChecker: {
     checkerAccount: 'AccountId32',
     checkerPubkey: '[u8;32]',
     regionCode: 'Bytes',
     hostAddress: 'Bytes',
     httpPort: 'u16',
     perfPorts: 'Vec<u16>',
-    registerStatus: 'EnreachPrimitivesCheckerCheckerRegisterStatus',
+    registerStatus: 'AroPrimitivesCheckerCheckerRegisterStatus',
     creator: 'AccountId32',
     createAt: 'u64',
     updator: 'AccountId32',
     updateAt: 'u64'
   },
   /**
-   * Lookup198: enreach_primitives::types::checker::CheckerRegisterStatus
+   * Lookup198: aro_primitives::types::checker::CheckerRegisterStatus
    **/
-  EnreachPrimitivesCheckerCheckerRegisterStatus: {
+  AroPrimitivesCheckerCheckerRegisterStatus: {
     _enum: ['RsPendingActivate', 'RsActivate']
   },
   /**
-   * Lookup199: enreach_primitives::types::checker::Scheduler<sp_core::crypto::AccountId32>
+   * Lookup199: aro_primitives::types::checker::Scheduler<sp_core::crypto::AccountId32>
    **/
-  EnreachPrimitivesCheckerScheduler: {
+  AroPrimitivesCheckerScheduler: {
     schedulerAccount: 'AccountId32',
     schedulerPubkey: '[u8;32]',
     hostAddress: 'Bytes',
@@ -1480,9 +1480,9 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup200: enreach_pallet_checker::pallet::Error<T>
+   * Lookup200: aro_pallet_checker::pallet::Error<T>
    **/
-  EnreachPalletCheckerError: {
+  AroPalletCheckerError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'PortsListIsEmpty', 'PortsListExceedMaxLength', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'CheckerAlreadyExists', 'CheckerNotFound', 'CheckerAlreadyActivate', 'CheckerNotActivateYet', 'SchedulerNotSet']
   },
   /**
@@ -1536,7 +1536,7 @@ export default {
     _enum: ['Disabled', 'Enabled']
   },
   /**
-   * Lookup216: enreach_runtime::Runtime
+   * Lookup216: aro_runtime::Runtime
    **/
-  EnreachRuntimeRuntime: 'Null'
+  AroRuntimeRuntime: 'Null'
 };
