@@ -1466,7 +1466,8 @@ declare module '@polkadot/types/lookup' {
     readonly isManagerAlreadyActivate: boolean;
     readonly isUnknownManagerRegisterStatus: boolean;
     readonly isInvalidManagerSignature: boolean;
-    readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'ManagerAlreadyExists' | 'ManagerNotFound' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'NotActivated' | 'NoOperatorBound' | 'InvalidConnectionParams' | 'RegionNotSet' | 'OperatorAlreadyExists' | 'OperatorNameExceedMaxLength' | 'OperatorDescExceedMaxLength' | 'OperatorUrlExceedMaxLength' | 'OperatorNotFound' | 'OperatorAndManagerAccountDuplicate' | 'ManagerAlreadyBind' | 'OperatorAndManagerAlreadyBind' | 'OperatorAlreadyBindToOtherManager' | 'ManagerNotBind' | 'ManagerRegionNotAllowedToChange' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'InvalidManagerRegisterStatus' | 'ManagerConfigNotDone' | 'ManagerAlreadyActivate' | 'UnknownManagerRegisterStatus' | 'InvalidManagerSignature';
+    readonly isInvalidAccountFormat: boolean;
+    readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'ManagerAlreadyExists' | 'ManagerNotFound' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'NotActivated' | 'NoOperatorBound' | 'InvalidConnectionParams' | 'RegionNotSet' | 'OperatorAlreadyExists' | 'OperatorNameExceedMaxLength' | 'OperatorDescExceedMaxLength' | 'OperatorUrlExceedMaxLength' | 'OperatorNotFound' | 'OperatorAndManagerAccountDuplicate' | 'ManagerAlreadyBind' | 'OperatorAndManagerAlreadyBind' | 'OperatorAlreadyBindToOtherManager' | 'ManagerNotBind' | 'ManagerRegionNotAllowedToChange' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'InvalidManagerRegisterStatus' | 'ManagerConfigNotDone' | 'ManagerAlreadyActivate' | 'UnknownManagerRegisterStatus' | 'InvalidManagerSignature' | 'InvalidAccountFormat';
   }
 
   /** @name AroPrimitivesWorkloadEpochInfo (165) */

@@ -239,6 +239,10 @@ declare module '@polkadot/api-base/types/errors' {
        **/
       IllegalSuperior: AugmentedError<ApiType>;
       /**
+       * Invalid account format
+       **/
+      InvalidAccountFormat: AugmentedError<ApiType>;
+      /**
        * Manager connection params not set
        **/
       InvalidConnectionParams: AugmentedError<ApiType>;

@@ -1088,7 +1088,7 @@ export default {
       },
       bind_manager: {
         managerAccount: 'AccountId32',
-        managerSignature: '[u8;65]',
+        managerSignature: '[u8;64]',
         forceUnbind: 'bool',
       },
       set_manager_region: {
@@ -1296,7 +1296,7 @@ export default {
    * Lookup164: aro_pallet_manager::pallet::Error<T>
    **/
   AroPalletManagerError: {
-    _enum: ['SuperiorNotSet', 'IllegalSuperior', 'ManagerAlreadyExists', 'ManagerNotFound', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'NotActivated', 'NoOperatorBound', 'InvalidConnectionParams', 'RegionNotSet', 'OperatorAlreadyExists', 'OperatorNameExceedMaxLength', 'OperatorDescExceedMaxLength', 'OperatorUrlExceedMaxLength', 'OperatorNotFound', 'OperatorAndManagerAccountDuplicate', 'ManagerAlreadyBind', 'OperatorAndManagerAlreadyBind', 'OperatorAlreadyBindToOtherManager', 'ManagerNotBind', 'ManagerRegionNotAllowedToChange', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'InvalidManagerRegisterStatus', 'ManagerConfigNotDone', 'ManagerAlreadyActivate', 'UnknownManagerRegisterStatus', 'InvalidManagerSignature']
+    _enum: ['SuperiorNotSet', 'IllegalSuperior', 'ManagerAlreadyExists', 'ManagerNotFound', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'NotActivated', 'NoOperatorBound', 'InvalidConnectionParams', 'RegionNotSet', 'OperatorAlreadyExists', 'OperatorNameExceedMaxLength', 'OperatorDescExceedMaxLength', 'OperatorUrlExceedMaxLength', 'OperatorNotFound', 'OperatorAndManagerAccountDuplicate', 'ManagerAlreadyBind', 'OperatorAndManagerAlreadyBind', 'OperatorAlreadyBindToOtherManager', 'ManagerNotBind', 'ManagerRegionNotAllowedToChange', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'InvalidManagerRegisterStatus', 'ManagerConfigNotDone', 'ManagerAlreadyActivate', 'UnknownManagerRegisterStatus', 'InvalidManagerSignature', 'InvalidAccountFormat']
   },
   /**
    * Lookup165: aro_primitives::types::workload::EpochInfo
