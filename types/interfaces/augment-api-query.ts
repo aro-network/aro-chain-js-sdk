@@ -97,6 +97,7 @@ declare module '@polkadot/api-base/types/storage' {
     };
     checker: {
       checkers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesChecker>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      checkersCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       schedulerDB: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesCheckerScheduler>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Storage items for this pallet.
@@ -112,6 +113,7 @@ declare module '@polkadot/api-base/types/storage' {
        * Storage items for this pallet.
        **/
       nodes: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesEdgenodeNode>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      nodesCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -167,7 +169,9 @@ declare module '@polkadot/api-base/types/storage' {
        * Storage items for this pallet.
        **/
       managers: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesManager>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      managersCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       operators: AugmentedQuery<ApiType, (arg: AccountId32 | string | Uint8Array) => Observable<Option<AroPrimitivesManagerOperator>>, [AccountId32]> & QueryableStorageEntry<ApiType, [AccountId32]>;
+      operatorsCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -179,6 +183,7 @@ declare module '@polkadot/api-base/types/storage' {
        * Storage items for this pallet.
        **/
       regions: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesRegistryRegion>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      regionsCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       superior: AugmentedQuery<ApiType, () => Observable<Option<AccountId32>>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
@@ -320,6 +325,7 @@ declare module '@polkadot/api-base/types/storage' {
        * Storage items for this pallet.
        **/
       users: AugmentedQuery<ApiType, (arg: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesUser>>, [Bytes]> & QueryableStorageEntry<ApiType, [Bytes]>;
+      usersCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/
@@ -329,7 +335,7 @@ declare module '@polkadot/api-base/types/storage' {
       cheatStatusChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadCheatStatusChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       cheatStatusChangeRequestsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       cheatStatusProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadCheatStatusProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      cheatStatusProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
+      cheatStatusProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       cheatStatusResults: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<AroPrimitivesWorkloadCheatStatusResult>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       cheatStatusResultsCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       currentEpoch: AugmentedQuery<ApiType, () => Observable<Option<AroPrimitivesWorkloadEpochInfo>>, []> & QueryableStorageEntry<ApiType, []>;
@@ -355,7 +361,7 @@ declare module '@polkadot/api-base/types/storage' {
       reputationPointChangeRequests: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadReputationPointChangeRequest>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       reputationPointChangeRequestsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       reputationPointsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadReputationPointProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      reputationPointsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
+      reputationPointsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Storage items for this pallet.
        **/
@@ -363,7 +369,7 @@ declare module '@polkadot/api-base/types/storage' {
       workreports: AugmentedQuery<ApiType, (arg1: u64 | AnyNumber | Uint8Array, arg2: Bytes | string | Uint8Array) => Observable<Option<BTreeMap<AccountId32, AroPrimitivesWorkloadWorkreport>>>, [u64, Bytes]> & QueryableStorageEntry<ApiType, [u64, Bytes]>;
       workreportsNodesCount: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<u64>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
       workreportsProcessHistory: AugmentedQuery<ApiType, (arg: u64 | AnyNumber | Uint8Array) => Observable<Option<AroPrimitivesWorkloadWorkreportProcessData>>, [u64]> & QueryableStorageEntry<ApiType, [u64]>;
-      workreportsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u64>, []> & QueryableStorageEntry<ApiType, []>;
+      workreportsProcessHistoryCount: AugmentedQuery<ApiType, () => Observable<u32>, []> & QueryableStorageEntry<ApiType, []>;
       /**
        * Generic query
        **/

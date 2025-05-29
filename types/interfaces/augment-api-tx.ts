@@ -6,7 +6,7 @@
 import '@polkadot/api-base/types/submittable';
 
 import type { ApiTypes, AugmentedSubmittable, SubmittableExtrinsic, SubmittableExtrinsicFunction } from '@polkadot/api-base/types';
-import type { Bytes, Compact, U8aFixed, Vec, bool, i64, u128, u16, u32, u64 } from '@polkadot/types-codec';
+import type { Bytes, Compact, Text, U8aFixed, Vec, bool, i64, u128, u16, u32, u64 } from '@polkadot/types-codec';
 import type { AnyNumber, IMethod, ITuple } from '@polkadot/types-codec/types';
 import type { AccountId32, Call, H160, H256, MultiAddress } from '@polkadot/types/interfaces/runtime';
 import type { AroPrimitivesEdgenodeCheatStatus, AroPrimitivesWorkloadParamKey, PalletBalancesAdjustmentDirection, SpConsensusGrandpaEquivocationProof, SpCoreVoid, SpWeightsWeightV2Weight } from '@polkadot/types/lookup';
@@ -170,7 +170,7 @@ declare module '@polkadot/api-base/types/submittable' {
       [key: string]: SubmittableExtrinsicFunction<ApiType>;
     };
     manager: {
-      activateManager: AugmentedSubmittable<(license: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Bytes]>;
+      activateManager: AugmentedSubmittable<(license: Text | string) => SubmittableExtrinsic<ApiType>, [Text]>;
       bindManager: AugmentedSubmittable<(managerAccount: AccountId32 | string | Uint8Array, managerSignature: U8aFixed | string | Uint8Array, forceUnbind: bool | boolean | Uint8Array) => SubmittableExtrinsic<ApiType>, [AccountId32, U8aFixed, bool]>;
       bindOperatorEvmAccount: AugmentedSubmittable<(evmAccount: H160 | string | Uint8Array, signature: U8aFixed | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [H160, U8aFixed]>;
       createOperator: AugmentedSubmittable<(name: Bytes | string | Uint8Array, desc: Bytes | string | Uint8Array, website: Bytes | string | Uint8Array) => SubmittableExtrinsic<ApiType>, [Bytes, Bytes, Bytes]>;

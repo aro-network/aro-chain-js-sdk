@@ -251,6 +251,18 @@ declare module '@polkadot/api-base/types/errors' {
        **/
       InvalidHostAddress: AugmentedError<ApiType>;
       /**
+       * Invalid license
+       **/
+      InvalidLicense: AugmentedError<ApiType>;
+      /**
+       * Invalid license enconding
+       **/
+      InvalidLicenseEncoding: AugmentedError<ApiType>;
+      /**
+       * Invalid license length
+       **/
+      InvalidLicenseLength: AugmentedError<ApiType>;
+      /**
        * Invalid state: Operator has bound to manager, RegisterStatus should not be Pending_Bind
        **/
       InvalidManagerRegisterStatus: AugmentedError<ApiType>;

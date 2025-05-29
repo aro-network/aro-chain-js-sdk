@@ -1206,7 +1206,7 @@ declare module '@polkadot/types/lookup' {
     } & Struct;
     readonly isActivateManager: boolean;
     readonly asActivateManager: {
-      readonly license: Bytes;
+      readonly license: Text;
     } & Struct;
     readonly isBindOperatorEvmAccount: boolean;
     readonly asBindOperatorEvmAccount: {
@@ -1467,7 +1467,10 @@ declare module '@polkadot/types/lookup' {
     readonly isUnknownManagerRegisterStatus: boolean;
     readonly isInvalidManagerSignature: boolean;
     readonly isInvalidAccountFormat: boolean;
-    readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'ManagerAlreadyExists' | 'ManagerNotFound' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'NotActivated' | 'NoOperatorBound' | 'InvalidConnectionParams' | 'RegionNotSet' | 'OperatorAlreadyExists' | 'OperatorNameExceedMaxLength' | 'OperatorDescExceedMaxLength' | 'OperatorUrlExceedMaxLength' | 'OperatorNotFound' | 'OperatorAndManagerAccountDuplicate' | 'ManagerAlreadyBind' | 'OperatorAndManagerAlreadyBind' | 'OperatorAlreadyBindToOtherManager' | 'ManagerNotBind' | 'ManagerRegionNotAllowedToChange' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'InvalidManagerRegisterStatus' | 'ManagerConfigNotDone' | 'ManagerAlreadyActivate' | 'UnknownManagerRegisterStatus' | 'InvalidManagerSignature' | 'InvalidAccountFormat';
+    readonly isInvalidLicenseEncoding: boolean;
+    readonly isInvalidLicenseLength: boolean;
+    readonly isInvalidLicense: boolean;
+    readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'ManagerAlreadyExists' | 'ManagerNotFound' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'NotActivated' | 'NoOperatorBound' | 'InvalidConnectionParams' | 'RegionNotSet' | 'OperatorAlreadyExists' | 'OperatorNameExceedMaxLength' | 'OperatorDescExceedMaxLength' | 'OperatorUrlExceedMaxLength' | 'OperatorNotFound' | 'OperatorAndManagerAccountDuplicate' | 'ManagerAlreadyBind' | 'OperatorAndManagerAlreadyBind' | 'OperatorAlreadyBindToOtherManager' | 'ManagerNotBind' | 'ManagerRegionNotAllowedToChange' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'InvalidManagerRegisterStatus' | 'ManagerConfigNotDone' | 'ManagerAlreadyActivate' | 'UnknownManagerRegisterStatus' | 'InvalidManagerSignature' | 'InvalidAccountFormat' | 'InvalidLicenseEncoding' | 'InvalidLicenseLength' | 'InvalidLicense';
   }
 
   /** @name AroPrimitivesWorkloadEpochInfo (165) */
@@ -1530,20 +1533,20 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'Init' | 'Processing' | 'Done';
   }
 
-  /** @name AroPrimitivesWorkloadReputationPointChangeRequest (180) */
+  /** @name AroPrimitivesWorkloadReputationPointChangeRequest (181) */
   interface AroPrimitivesWorkloadReputationPointChangeRequest extends Struct {
     readonly deltaPoint: i64;
     readonly createAt: u64;
     readonly updateAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadReputationDeltaPoint (184) */
+  /** @name AroPrimitivesWorkloadReputationDeltaPoint (185) */
   interface AroPrimitivesWorkloadReputationDeltaPoint extends Struct {
     readonly deltaPoint: i64;
     readonly createAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadManagerRPWorkload (185) */
+  /** @name AroPrimitivesWorkloadManagerRPWorkload (186) */
   interface AroPrimitivesWorkloadManagerRPWorkload extends Struct {
     readonly era: u64;
     readonly managerAccount: AccountId32;
@@ -1553,7 +1556,7 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadReputationPointProcessData (186) */
+  /** @name AroPrimitivesWorkloadReputationPointProcessData (187) */
   interface AroPrimitivesWorkloadReputationPointProcessData extends Struct {
     readonly era: u64;
     readonly totalNodesCount: u64;
@@ -1564,20 +1567,20 @@ declare module '@polkadot/types/lookup' {
     readonly pageNextKey: Option<Bytes>;
   }
 
-  /** @name AroPrimitivesWorkloadCheatStatusChangeRequest (188) */
+  /** @name AroPrimitivesWorkloadCheatStatusChangeRequest (189) */
   interface AroPrimitivesWorkloadCheatStatusChangeRequest extends Struct {
     readonly cheatStatus: AroPrimitivesEdgenodeCheatStatus;
     readonly createAt: u64;
     readonly updateAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadCheatStatusResult (192) */
+  /** @name AroPrimitivesWorkloadCheatStatusResult (193) */
   interface AroPrimitivesWorkloadCheatStatusResult extends Struct {
     readonly cheatStatus: AroPrimitivesEdgenodeCheatStatus;
     readonly createAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadManagerCSWorkload (193) */
+  /** @name AroPrimitivesWorkloadManagerCSWorkload (194) */
   interface AroPrimitivesWorkloadManagerCSWorkload extends Struct {
     readonly era: u64;
     readonly managerAccount: AccountId32;
@@ -1587,7 +1590,7 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name AroPrimitivesWorkloadCheatStatusProcessData (194) */
+  /** @name AroPrimitivesWorkloadCheatStatusProcessData (195) */
   interface AroPrimitivesWorkloadCheatStatusProcessData extends Struct {
     readonly era: u64;
     readonly totalNodesCount: u64;
@@ -1598,7 +1601,7 @@ declare module '@polkadot/types/lookup' {
     readonly pageNextKey: Option<Bytes>;
   }
 
-  /** @name AroPalletWorkloadError (195) */
+  /** @name AroPalletWorkloadError (196) */
   interface AroPalletWorkloadError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
@@ -1623,7 +1626,7 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'InvalidCurrentEpoch' | 'InvalidCurrentEra' | 'ManagerNotFound' | 'ManagerNotActivate' | 'ManagerBlocked' | 'GenesisEpochNotAllowed' | 'InvalidSubmitEpoch' | 'ManagerLimitExceeded' | 'NodeScoresCountExceedPerReqLimit' | 'InvalidParamValueRange' | 'EraLengthNotMultipleOfEpochLength' | 'NodePointsCountExceedPerReqLimit' | 'GenesisEraNotAllowed' | 'InvalidSubmitEra' | 'NodeDatasCountExceedPerReqLimit' | 'NoActiveEpoch' | 'NoActiveEra' | 'InvalidPageNextKey';
   }
 
-  /** @name AroPrimitivesChecker (196) */
+  /** @name AroPrimitivesChecker (197) */
   interface AroPrimitivesChecker extends Struct {
     readonly checkerAccount: AccountId32;
     readonly checkerPubkey: U8aFixed;
@@ -1638,14 +1641,14 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name AroPrimitivesCheckerCheckerRegisterStatus (198) */
+  /** @name AroPrimitivesCheckerCheckerRegisterStatus (199) */
   interface AroPrimitivesCheckerCheckerRegisterStatus extends Enum {
     readonly isRsPendingActivate: boolean;
     readonly isRsActivate: boolean;
     readonly type: 'RsPendingActivate' | 'RsActivate';
   }
 
-  /** @name AroPrimitivesCheckerScheduler (199) */
+  /** @name AroPrimitivesCheckerScheduler (200) */
   interface AroPrimitivesCheckerScheduler extends Struct {
     readonly schedulerAccount: AccountId32;
     readonly schedulerPubkey: U8aFixed;
@@ -1657,7 +1660,7 @@ declare module '@polkadot/types/lookup' {
     readonly updateAt: u64;
   }
 
-  /** @name AroPalletCheckerError (200) */
+  /** @name AroPalletCheckerError (201) */
   interface AroPalletCheckerError extends Enum {
     readonly isSuperiorNotSet: boolean;
     readonly isIllegalSuperior: boolean;
@@ -1676,7 +1679,7 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'SuperiorNotSet' | 'IllegalSuperior' | 'InvalidHostAddress' | 'HostAddressExceedMaxLength' | 'InvalidPort' | 'PortsListIsEmpty' | 'PortsListExceedMaxLength' | 'RegionCodeExceedMaxLength' | 'InvalidRegionCode' | 'CheckerAlreadyExists' | 'CheckerNotFound' | 'CheckerAlreadyActivate' | 'CheckerNotActivateYet' | 'SchedulerNotSet';
   }
 
-  /** @name SpRuntimeMultiSignature (202) */
+  /** @name SpRuntimeMultiSignature (203) */
   interface SpRuntimeMultiSignature extends Enum {
     readonly isEd25519: boolean;
     readonly asEd25519: U8aFixed;
@@ -1687,40 +1690,40 @@ declare module '@polkadot/types/lookup' {
     readonly type: 'Ed25519' | 'Sr25519' | 'Ecdsa';
   }
 
-  /** @name FrameSystemExtensionsCheckNonZeroSender (204) */
+  /** @name FrameSystemExtensionsCheckNonZeroSender (205) */
   type FrameSystemExtensionsCheckNonZeroSender = Null;
 
-  /** @name FrameSystemExtensionsCheckSpecVersion (205) */
+  /** @name FrameSystemExtensionsCheckSpecVersion (206) */
   type FrameSystemExtensionsCheckSpecVersion = Null;
 
-  /** @name FrameSystemExtensionsCheckTxVersion (206) */
+  /** @name FrameSystemExtensionsCheckTxVersion (207) */
   type FrameSystemExtensionsCheckTxVersion = Null;
 
-  /** @name FrameSystemExtensionsCheckGenesis (207) */
+  /** @name FrameSystemExtensionsCheckGenesis (208) */
   type FrameSystemExtensionsCheckGenesis = Null;
 
-  /** @name FrameSystemExtensionsCheckNonce (210) */
+  /** @name FrameSystemExtensionsCheckNonce (211) */
   interface FrameSystemExtensionsCheckNonce extends Compact<u32> {}
 
-  /** @name FrameSystemExtensionsCheckWeight (211) */
+  /** @name FrameSystemExtensionsCheckWeight (212) */
   type FrameSystemExtensionsCheckWeight = Null;
 
-  /** @name PalletTransactionPaymentChargeTransactionPayment (212) */
+  /** @name PalletTransactionPaymentChargeTransactionPayment (213) */
   interface PalletTransactionPaymentChargeTransactionPayment extends Compact<u128> {}
 
-  /** @name FrameMetadataHashExtensionCheckMetadataHash (213) */
+  /** @name FrameMetadataHashExtensionCheckMetadataHash (214) */
   interface FrameMetadataHashExtensionCheckMetadataHash extends Struct {
     readonly mode: FrameMetadataHashExtensionMode;
   }
 
-  /** @name FrameMetadataHashExtensionMode (214) */
+  /** @name FrameMetadataHashExtensionMode (215) */
   interface FrameMetadataHashExtensionMode extends Enum {
     readonly isDisabled: boolean;
     readonly isEnabled: boolean;
     readonly type: 'Disabled' | 'Enabled';
   }
 
-  /** @name AroRuntimeRuntime (216) */
+  /** @name AroRuntimeRuntime (217) */
   type AroRuntimeRuntime = Null;
 
 } // declare module

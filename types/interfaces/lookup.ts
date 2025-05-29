@@ -1102,7 +1102,7 @@ export default {
         chainRpcPort: 'u16',
       },
       activate_manager: {
-        license: 'Bytes',
+        license: 'Text',
       },
       bind_operator_evm_account: {
         evmAccount: 'H160',
@@ -1296,7 +1296,7 @@ export default {
    * Lookup164: aro_pallet_manager::pallet::Error<T>
    **/
   AroPalletManagerError: {
-    _enum: ['SuperiorNotSet', 'IllegalSuperior', 'ManagerAlreadyExists', 'ManagerNotFound', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'NotActivated', 'NoOperatorBound', 'InvalidConnectionParams', 'RegionNotSet', 'OperatorAlreadyExists', 'OperatorNameExceedMaxLength', 'OperatorDescExceedMaxLength', 'OperatorUrlExceedMaxLength', 'OperatorNotFound', 'OperatorAndManagerAccountDuplicate', 'ManagerAlreadyBind', 'OperatorAndManagerAlreadyBind', 'OperatorAlreadyBindToOtherManager', 'ManagerNotBind', 'ManagerRegionNotAllowedToChange', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'InvalidManagerRegisterStatus', 'ManagerConfigNotDone', 'ManagerAlreadyActivate', 'UnknownManagerRegisterStatus', 'InvalidManagerSignature', 'InvalidAccountFormat']
+    _enum: ['SuperiorNotSet', 'IllegalSuperior', 'ManagerAlreadyExists', 'ManagerNotFound', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'NotActivated', 'NoOperatorBound', 'InvalidConnectionParams', 'RegionNotSet', 'OperatorAlreadyExists', 'OperatorNameExceedMaxLength', 'OperatorDescExceedMaxLength', 'OperatorUrlExceedMaxLength', 'OperatorNotFound', 'OperatorAndManagerAccountDuplicate', 'ManagerAlreadyBind', 'OperatorAndManagerAlreadyBind', 'OperatorAlreadyBindToOtherManager', 'ManagerNotBind', 'ManagerRegionNotAllowedToChange', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'InvalidManagerRegisterStatus', 'ManagerConfigNotDone', 'ManagerAlreadyActivate', 'UnknownManagerRegisterStatus', 'InvalidManagerSignature', 'InvalidAccountFormat', 'InvalidLicenseEncoding', 'InvalidLicenseLength', 'InvalidLicense']
   },
   /**
    * Lookup165: aro_primitives::types::workload::EpochInfo
@@ -1363,7 +1363,7 @@ export default {
     _enum: ['Init', 'Processing', 'Done']
   },
   /**
-   * Lookup180: aro_primitives::types::workload::ReputationPointChangeRequest
+   * Lookup181: aro_primitives::types::workload::ReputationPointChangeRequest
    **/
   AroPrimitivesWorkloadReputationPointChangeRequest: {
     deltaPoint: 'i64',
@@ -1371,14 +1371,14 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup184: aro_primitives::types::workload::ReputationDeltaPoint
+   * Lookup185: aro_primitives::types::workload::ReputationDeltaPoint
    **/
   AroPrimitivesWorkloadReputationDeltaPoint: {
     deltaPoint: 'i64',
     createAt: 'u64'
   },
   /**
-   * Lookup185: aro_primitives::types::workload::ManagerRPWorkload<sp_core::crypto::AccountId32>
+   * Lookup186: aro_primitives::types::workload::ManagerRPWorkload<sp_core::crypto::AccountId32>
    **/
   AroPrimitivesWorkloadManagerRPWorkload: {
     era: 'u64',
@@ -1389,7 +1389,7 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup186: aro_primitives::types::workload::ReputationPointProcessData
+   * Lookup187: aro_primitives::types::workload::ReputationPointProcessData
    **/
   AroPrimitivesWorkloadReputationPointProcessData: {
     era: 'u64',
@@ -1401,7 +1401,7 @@ export default {
     pageNextKey: 'Option<Bytes>'
   },
   /**
-   * Lookup188: aro_primitives::types::workload::CheatStatusChangeRequest
+   * Lookup189: aro_primitives::types::workload::CheatStatusChangeRequest
    **/
   AroPrimitivesWorkloadCheatStatusChangeRequest: {
     cheatStatus: 'AroPrimitivesEdgenodeCheatStatus',
@@ -1409,14 +1409,14 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup192: aro_primitives::types::workload::CheatStatusResult
+   * Lookup193: aro_primitives::types::workload::CheatStatusResult
    **/
   AroPrimitivesWorkloadCheatStatusResult: {
     cheatStatus: 'AroPrimitivesEdgenodeCheatStatus',
     createAt: 'u64'
   },
   /**
-   * Lookup193: aro_primitives::types::workload::ManagerCSWorkload<sp_core::crypto::AccountId32>
+   * Lookup194: aro_primitives::types::workload::ManagerCSWorkload<sp_core::crypto::AccountId32>
    **/
   AroPrimitivesWorkloadManagerCSWorkload: {
     era: 'u64',
@@ -1427,7 +1427,7 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup194: aro_primitives::types::workload::CheatStatusProcessData
+   * Lookup195: aro_primitives::types::workload::CheatStatusProcessData
    **/
   AroPrimitivesWorkloadCheatStatusProcessData: {
     era: 'u64',
@@ -1439,13 +1439,13 @@ export default {
     pageNextKey: 'Option<Bytes>'
   },
   /**
-   * Lookup195: aro_pallet_workload::pallet::Error<T>
+   * Lookup196: aro_pallet_workload::pallet::Error<T>
    **/
   AroPalletWorkloadError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'InvalidCurrentEpoch', 'InvalidCurrentEra', 'ManagerNotFound', 'ManagerNotActivate', 'ManagerBlocked', 'GenesisEpochNotAllowed', 'InvalidSubmitEpoch', 'ManagerLimitExceeded', 'NodeScoresCountExceedPerReqLimit', 'InvalidParamValueRange', 'EraLengthNotMultipleOfEpochLength', 'NodePointsCountExceedPerReqLimit', 'GenesisEraNotAllowed', 'InvalidSubmitEra', 'NodeDatasCountExceedPerReqLimit', 'NoActiveEpoch', 'NoActiveEra', 'InvalidPageNextKey']
   },
   /**
-   * Lookup196: aro_primitives::types::checker::Checker<sp_core::crypto::AccountId32>
+   * Lookup197: aro_primitives::types::checker::Checker<sp_core::crypto::AccountId32>
    **/
   AroPrimitivesChecker: {
     checkerAccount: 'AccountId32',
@@ -1461,13 +1461,13 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup198: aro_primitives::types::checker::CheckerRegisterStatus
+   * Lookup199: aro_primitives::types::checker::CheckerRegisterStatus
    **/
   AroPrimitivesCheckerCheckerRegisterStatus: {
     _enum: ['RsPendingActivate', 'RsActivate']
   },
   /**
-   * Lookup199: aro_primitives::types::checker::Scheduler<sp_core::crypto::AccountId32>
+   * Lookup200: aro_primitives::types::checker::Scheduler<sp_core::crypto::AccountId32>
    **/
   AroPrimitivesCheckerScheduler: {
     schedulerAccount: 'AccountId32',
@@ -1480,13 +1480,13 @@ export default {
     updateAt: 'u64'
   },
   /**
-   * Lookup200: aro_pallet_checker::pallet::Error<T>
+   * Lookup201: aro_pallet_checker::pallet::Error<T>
    **/
   AroPalletCheckerError: {
     _enum: ['SuperiorNotSet', 'IllegalSuperior', 'InvalidHostAddress', 'HostAddressExceedMaxLength', 'InvalidPort', 'PortsListIsEmpty', 'PortsListExceedMaxLength', 'RegionCodeExceedMaxLength', 'InvalidRegionCode', 'CheckerAlreadyExists', 'CheckerNotFound', 'CheckerAlreadyActivate', 'CheckerNotActivateYet', 'SchedulerNotSet']
   },
   /**
-   * Lookup202: sp_runtime::MultiSignature
+   * Lookup203: sp_runtime::MultiSignature
    **/
   SpRuntimeMultiSignature: {
     _enum: {
@@ -1496,47 +1496,47 @@ export default {
     }
   },
   /**
-   * Lookup204: frame_system::extensions::check_non_zero_sender::CheckNonZeroSender<T>
+   * Lookup205: frame_system::extensions::check_non_zero_sender::CheckNonZeroSender<T>
    **/
   FrameSystemExtensionsCheckNonZeroSender: 'Null',
   /**
-   * Lookup205: frame_system::extensions::check_spec_version::CheckSpecVersion<T>
+   * Lookup206: frame_system::extensions::check_spec_version::CheckSpecVersion<T>
    **/
   FrameSystemExtensionsCheckSpecVersion: 'Null',
   /**
-   * Lookup206: frame_system::extensions::check_tx_version::CheckTxVersion<T>
+   * Lookup207: frame_system::extensions::check_tx_version::CheckTxVersion<T>
    **/
   FrameSystemExtensionsCheckTxVersion: 'Null',
   /**
-   * Lookup207: frame_system::extensions::check_genesis::CheckGenesis<T>
+   * Lookup208: frame_system::extensions::check_genesis::CheckGenesis<T>
    **/
   FrameSystemExtensionsCheckGenesis: 'Null',
   /**
-   * Lookup210: frame_system::extensions::check_nonce::CheckNonce<T>
+   * Lookup211: frame_system::extensions::check_nonce::CheckNonce<T>
    **/
   FrameSystemExtensionsCheckNonce: 'Compact<u32>',
   /**
-   * Lookup211: frame_system::extensions::check_weight::CheckWeight<T>
+   * Lookup212: frame_system::extensions::check_weight::CheckWeight<T>
    **/
   FrameSystemExtensionsCheckWeight: 'Null',
   /**
-   * Lookup212: pallet_transaction_payment::ChargeTransactionPayment<T>
+   * Lookup213: pallet_transaction_payment::ChargeTransactionPayment<T>
    **/
   PalletTransactionPaymentChargeTransactionPayment: 'Compact<u128>',
   /**
-   * Lookup213: frame_metadata_hash_extension::CheckMetadataHash<T>
+   * Lookup214: frame_metadata_hash_extension::CheckMetadataHash<T>
    **/
   FrameMetadataHashExtensionCheckMetadataHash: {
     mode: 'FrameMetadataHashExtensionMode'
   },
   /**
-   * Lookup214: frame_metadata_hash_extension::Mode
+   * Lookup215: frame_metadata_hash_extension::Mode
    **/
   FrameMetadataHashExtensionMode: {
     _enum: ['Disabled', 'Enabled']
   },
   /**
-   * Lookup216: aro_runtime::Runtime
+   * Lookup217: aro_runtime::Runtime
    **/
   AroRuntimeRuntime: 'Null'
 };
