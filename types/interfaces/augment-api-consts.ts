@@ -6,22 +6,37 @@
 import '@polkadot/api-base/types/consts';
 
 import type { ApiTypes, AugmentedConst } from '@polkadot/api-base/types';
-import type { u128, u16, u32, u64, u8 } from '@polkadot/types-codec';
+import type { U8aFixed, Vec, bool, u128, u16, u32, u64, u8 } from '@polkadot/types-codec';
 import type { Codec } from '@polkadot/types-codec/types';
-import type { FrameSystemLimitsBlockLength, FrameSystemLimitsBlockWeights, SpVersionRuntimeVersion, SpWeightsRuntimeDbWeight } from '@polkadot/types/lookup';
+import type { FrameSystemLimitsBlockLength, FrameSystemLimitsBlockWeights, SpVersionRuntimeVersion, SpWeightsRuntimeDbWeight, SpWeightsWeightV2Weight } from '@polkadot/types/lookup';
 
 export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>;
 
 declare module '@polkadot/api-base/types/consts' {
   interface AugmentedConsts<ApiType extends ApiTypes> {
-    aura: {
+    babe: {
       /**
-       * The slot duration Aura should run with, expressed in milliseconds.
-       * The effective value of this type should not change while the chain is running.
-       * 
-       * For backwards compatibility either use [`MinimumPeriodTimesTwo`] or a const.
+       * The amount of time, in slots, that each epoch should last.
+       * NOTE: Currently it is not possible to change the epoch duration after
+       * the chain has started. Attempting to do so will brick block production.
        **/
-      slotDuration: u64 & AugmentedConst<ApiType>;
+      epochDuration: u64 & AugmentedConst<ApiType>;
+      /**
+       * The expected average block time at which BABE should be creating
+       * blocks. Since BABE is probabilistic it is not trivial to figure out
+       * what the expected average block time should be based on the slot
+       * duration and the security parameter `c` (where `1 - c` represents
+       * the probability of a slot being empty).
+       **/
+      expectedBlockTime: u64 & AugmentedConst<ApiType>;
+      /**
+       * Max number of authorities allowed
+       **/
+      maxAuthorities: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of nominators for each validator.
+       **/
+      maxNominators: u32 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -61,6 +76,146 @@ declare module '@polkadot/api-base/types/consts' {
        **/
       [key: string]: Codec;
     };
+    council: {
+      /**
+       * The maximum weight of a dispatch call that can be proposed and executed.
+       **/
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    democracy: {
+      /**
+       * Period in blocks where an external proposal may not be re-submitted after being vetoed.
+       **/
+      cooloffPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * The period between a proposal being approved and enacted.
+       * 
+       * It should generally be a little more than the unstake period to ensure that
+       * voting stakers have an opportunity to remove themselves from the system in the case
+       * where they are on the losing side of a vote.
+       **/
+      enactmentPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * Minimum voting period allowed for a fast-track referendum.
+       **/
+      fastTrackVotingPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * Indicator for whether an emergency origin is even allowed to happen. Some chains may
+       * want to set this permanently to `false`, others may want to condition it on things such
+       * as an upgrade having happened recently.
+       **/
+      instantAllowed: bool & AugmentedConst<ApiType>;
+      /**
+       * How often (in blocks) new public referenda are launched.
+       **/
+      launchPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of items which can be blacklisted.
+       **/
+      maxBlacklisted: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of deposits a public proposal may have at any time.
+       **/
+      maxDeposits: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of public proposals that can exist at any time.
+       **/
+      maxProposals: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of votes for an account.
+       * 
+       * Also used to compute weight, an overly big value can
+       * lead to extrinsic with very big weight: see `delegate` for instance.
+       **/
+      maxVotes: u32 & AugmentedConst<ApiType>;
+      /**
+       * The minimum amount to be used as a deposit for a public referendum proposal.
+       **/
+      minimumDeposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * The minimum period of vote locking.
+       * 
+       * It should be no shorter than enactment period to ensure that in the case of an approval,
+       * those successful voters are locked into the consequences that their votes entail.
+       **/
+      voteLockingPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * How often (in blocks) to check for new votes.
+       **/
+      votingPeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    elections: {
+      /**
+       * How much should be locked up in order to submit one's candidacy.
+       **/
+      candidacyBond: u128 & AugmentedConst<ApiType>;
+      /**
+       * Number of members to elect.
+       **/
+      desiredMembers: u32 & AugmentedConst<ApiType>;
+      /**
+       * Number of runners_up to keep.
+       **/
+      desiredRunnersUp: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of candidates in a phragmen election.
+       * 
+       * Warning: This impacts the size of the election which is run onchain. Chose wisely, and
+       * consider how it will impact `T::WeightInfo::election_phragmen`.
+       * 
+       * When this limit is reached no more candidates are accepted in the election.
+       **/
+      maxCandidates: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of voters to allow in a phragmen election.
+       * 
+       * Warning: This impacts the size of the election which is run onchain. Chose wisely, and
+       * consider how it will impact `T::WeightInfo::election_phragmen`.
+       * 
+       * When the limit is reached the new voters are ignored.
+       **/
+      maxVoters: u32 & AugmentedConst<ApiType>;
+      /**
+       * Maximum numbers of votes per voter.
+       * 
+       * Warning: This impacts the size of the election which is run onchain. Chose wisely, and
+       * consider how it will impact `T::WeightInfo::election_phragmen`.
+       **/
+      maxVotesPerVoter: u32 & AugmentedConst<ApiType>;
+      /**
+       * Identifier for the elections-phragmen pallet's lock
+       **/
+      palletId: U8aFixed & AugmentedConst<ApiType>;
+      /**
+       * How long each seat is kept. This defines the next block number at which an election
+       * round will happen. If set to zero, no elections are ever triggered and the module will
+       * be in passive mode.
+       **/
+      termDuration: u64 & AugmentedConst<ApiType>;
+      /**
+       * Base deposit associated with voting.
+       * 
+       * This should be sensibly high to economically ensure the pallet cannot be attacked by
+       * creating a gigantic number of votes.
+       **/
+      votingBondBase: u128 & AugmentedConst<ApiType>;
+      /**
+       * The amount of bond that need to be locked for each vote (32 bytes).
+       **/
+      votingBondFactor: u128 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
     grandpa: {
       /**
        * Max Authorities in use
@@ -79,6 +234,199 @@ declare module '@polkadot/api-base/types/consts' {
        * can be zero.
        **/
       maxSetIdSessionEntries: u64 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    identity: {
+      /**
+       * The amount held on deposit for a registered identity.
+       **/
+      basicDeposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * The amount held on deposit per encoded byte for a registered identity.
+       **/
+      byteDeposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * Maximum number of registrars allowed in the system. Needed to bound the complexity
+       * of, e.g., updating judgements.
+       **/
+      maxRegistrars: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of sub-accounts allowed per identified account.
+       **/
+      maxSubAccounts: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum length of a suffix.
+       **/
+      maxSuffixLength: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum length of a username, including its suffix and any system-added delimiters.
+       **/
+      maxUsernameLength: u32 & AugmentedConst<ApiType>;
+      /**
+       * The number of blocks within which a username grant must be accepted.
+       **/
+      pendingUsernameExpiration: u64 & AugmentedConst<ApiType>;
+      /**
+       * The amount held on deposit for a registered subaccount. This should account for the fact
+       * that one storage item's value will increase by the size of an account ID, and there will
+       * be another trie item whose value is the size of an account ID plus 32 bytes.
+       **/
+      subAccountDeposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * The amount held on deposit per registered username. This value should change only in
+       * runtime upgrades with proper migration of existing deposits.
+       **/
+      usernameDeposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * The number of blocks that must pass to enable the permanent deletion of a username by
+       * its respective authority.
+       **/
+      usernameGracePeriod: u64 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    imOnline: {
+      /**
+       * A configuration for base priority of unsigned transactions.
+       * 
+       * This is exposed so that it can be tuned for particular runtime, when
+       * multiple pallets send unsigned transactions.
+       **/
+      unsignedPriority: u64 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    indices: {
+      /**
+       * The deposit needed for reserving an index.
+       **/
+      deposit: u128 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    scheduler: {
+      /**
+       * The maximum weight that may be scheduled per block for any dispatchables.
+       **/
+      maximumWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of scheduled calls in the queue for a single block.
+       * 
+       * NOTE:
+       * + Dependent pallets' benchmarks might require a higher limit for the setting. Set a
+       * higher limit under `runtime-benchmarks` feature.
+       **/
+      maxScheduledPerBlock: u32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    staking: {
+      /**
+       * Number of eras that staked funds must remain bonded for.
+       **/
+      bondingDuration: u32 & AugmentedConst<ApiType>;
+      /**
+       * Number of eras to keep in history.
+       * 
+       * Following information is kept for eras in `[current_era -
+       * HistoryDepth, current_era]`: `ErasStakers`, `ErasStakersClipped`,
+       * `ErasValidatorPrefs`, `ErasValidatorReward`, `ErasRewardPoints`,
+       * `ErasTotalStake`, `ErasStartSessionIndex`, `ClaimedRewards`, `ErasStakersPaged`,
+       * `ErasStakersOverview`.
+       * 
+       * Must be more than the number of eras delayed by session.
+       * I.e. active era must always be in history. I.e. `active_era >
+       * current_era - history_depth` must be guaranteed.
+       * 
+       * If migrating an existing pallet from storage value to config value,
+       * this should be set to same value or greater as in storage.
+       * 
+       * Note: `HistoryDepth` is used as the upper bound for the `BoundedVec`
+       * item `StakingLedger.legacy_claimed_rewards`. Setting this value lower than
+       * the existing value can lead to inconsistencies in the
+       * `StakingLedger` and will need to be handled properly in a migration.
+       * The test `reducing_history_depth_abrupt` shows this effect.
+       **/
+      historyDepth: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum size of each `T::ExposurePage`.
+       * 
+       * An `ExposurePage` is weakly bounded to a maximum of `MaxExposurePageSize`
+       * nominators.
+       * 
+       * For older non-paged exposure, a reward payout was restricted to the top
+       * `MaxExposurePageSize` nominators. This is to limit the i/o cost for the
+       * nominator payout.
+       * 
+       * Note: `MaxExposurePageSize` is used to bound `ClaimedRewards` and is unsafe to reduce
+       * without handling it in a migration.
+       **/
+      maxExposurePageSize: u32 & AugmentedConst<ApiType>;
+      /**
+       * The maximum number of `unlocking` chunks a [`StakingLedger`] can
+       * have. Effectively determines how many unique eras a staker may be
+       * unbonding in.
+       * 
+       * Note: `MaxUnlockingChunks` is used as the upper bound for the
+       * `BoundedVec` item `StakingLedger.unlocking`. Setting this value
+       * lower than the existing value can lead to inconsistencies in the
+       * `StakingLedger` and will need to be handled properly in a runtime
+       * migration. The test `reducing_max_unlocking_chunks_abrupt` shows
+       * this effect.
+       **/
+      maxUnlockingChunks: u32 & AugmentedConst<ApiType>;
+      /**
+       * Number of sessions per era.
+       **/
+      sessionsPerEra: u32 & AugmentedConst<ApiType>;
+      /**
+       * Number of eras that slashes are deferred by, after computation.
+       * 
+       * This should be less than the bonding duration. Set to 0 if slashes
+       * should be applied immediately, without opportunity for intervention.
+       **/
+      slashDeferDuration: u32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    statement: {
+      /**
+       * Cost of data byte used for priority calculation.
+       **/
+      byteCost: u128 & AugmentedConst<ApiType>;
+      /**
+       * Maximum data bytes allowed per account.
+       **/
+      maxAllowedBytes: u32 & AugmentedConst<ApiType>;
+      /**
+       * Maximum number of statements allowed per account.
+       **/
+      maxAllowedStatements: u32 & AugmentedConst<ApiType>;
+      /**
+       * Minimum data bytes allowed per account.
+       **/
+      minAllowedBytes: u32 & AugmentedConst<ApiType>;
+      /**
+       * Minimum number of statements allowed per account.
+       **/
+      minAllowedStatements: u32 & AugmentedConst<ApiType>;
+      /**
+       * Min balance for priority statements.
+       **/
+      statementCost: u128 & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -113,6 +461,16 @@ declare module '@polkadot/api-base/types/consts' {
        * Get the chain's in-code version.
        **/
       version: SpVersionRuntimeVersion & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    technicalCommittee: {
+      /**
+       * The maximum weight of a dispatch call that can be proposed and executed.
+       **/
+      maxProposalWeight: SpWeightsWeightV2Weight & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
@@ -158,6 +516,68 @@ declare module '@polkadot/api-base/types/consts' {
        * transactions.
        **/
       operationalFeeMultiplier: u8 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    utility: {
+      /**
+       * The limit on the number of batched calls.
+       **/
+      batchedCallsLimit: u32 & AugmentedConst<ApiType>;
+      /**
+       * Generic const
+       **/
+      [key: string]: Codec;
+    };
+    voterList: {
+      /**
+       * The list of thresholds separating the various bags.
+       * 
+       * Ids are separated into unsorted bags according to their score. This specifies the
+       * thresholds separating the bags. An id's bag is the largest bag for which the id's score
+       * is less than or equal to its upper threshold.
+       * 
+       * When ids are iterated, higher bags are iterated completely before lower bags. This means
+       * that iteration is _semi-sorted_: ids of higher score tend to come before ids of lower
+       * score, but peer ids within a particular bag are sorted in insertion order.
+       * 
+       * # Expressing the constant
+       * 
+       * This constant must be sorted in strictly increasing order. Duplicate items are not
+       * permitted.
+       * 
+       * There is an implied upper limit of `Score::MAX`; that value does not need to be
+       * specified within the bag. For any two threshold lists, if one ends with
+       * `Score::MAX`, the other one does not, and they are otherwise equal, the two
+       * lists will behave identically.
+       * 
+       * # Calculation
+       * 
+       * It is recommended to generate the set of thresholds in a geometric series, such that
+       * there exists some constant ratio such that `threshold[k + 1] == (threshold[k] *
+       * constant_ratio).max(threshold[k] + 1)` for all `k`.
+       * 
+       * The helpers in the `/utils/frame/generate-bags` module can simplify this calculation.
+       * 
+       * # Examples
+       * 
+       * - If `BagThresholds::get().is_empty()`, then all ids are put into the same bag, and
+       * iteration is strictly in insertion order.
+       * - If `BagThresholds::get().len() == 64`, and the thresholds are determined according to
+       * the procedure given above, then the constant ratio is equal to 2.
+       * - If `BagThresholds::get().len() == 200`, and the thresholds are determined according to
+       * the procedure given above, then the constant ratio is approximately equal to 1.248.
+       * - If the threshold list begins `[1, 2, 3, ...]`, then an id with score 0 or 1 will fall
+       * into bag 0, an id with score 2 will fall into bag 1, etc.
+       * 
+       * # Migration
+       * 
+       * In the event that this list ever changes, a copy of the old bags list must be retained.
+       * With that `List::migrate` can be called, which will perform the appropriate migration.
+       **/
+      bagThresholds: Vec<u64> & AugmentedConst<ApiType>;
       /**
        * Generic const
        **/
