@@ -1208,7 +1208,7 @@ export default {
    * Lookup99: aro_primitives::types::workload::ParamKey
    **/
   AroPrimitivesWorkloadParamKey: {
-    _enum: ['EpochLength', 'EraLength', 'WorkreportProcessBatchSize', 'ReputationPointProcessBatchSize', 'CheatStatusProcessBatchSize', 'HistoryEpochDataDepth', 'HistoryEraDataDepth']
+    _enum: ['EpochLength', 'EraLength', 'WorkreportProcessBatchSize', 'ReputationPointProcessBatchSize', 'CheatStatusProcessBatchSize', 'HistoryEpochDataDepth', 'HistoryEraDataDepth', 'EpochDataSubmitWindowLength', 'EraDataSubmitWindowLength']
   },
   /**
    * Lookup100: aro_pallet_checker::pallet::Event<T>

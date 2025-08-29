@@ -1339,7 +1339,9 @@ declare module '@polkadot/types/lookup' {
     readonly isCheatStatusProcessBatchSize: boolean;
     readonly isHistoryEpochDataDepth: boolean;
     readonly isHistoryEraDataDepth: boolean;
-    readonly type: 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth';
+    readonly isEpochDataSubmitWindowLength: boolean;
+    readonly isEraDataSubmitWindowLength: boolean;
+    readonly type: 'EpochLength' | 'EraLength' | 'WorkreportProcessBatchSize' | 'ReputationPointProcessBatchSize' | 'CheatStatusProcessBatchSize' | 'HistoryEpochDataDepth' | 'HistoryEraDataDepth' | 'EpochDataSubmitWindowLength' | 'EraDataSubmitWindowLength';
   }
 
   /** @name AroPalletCheckerEvent (100) */
